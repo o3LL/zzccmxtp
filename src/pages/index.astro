@@ -1,0 +1,155 @@
+---
+// Component Imports
+import Tweet from '../components/Tweet.astro';
+import List from '../components/List.astro';
+import zzLogo from '../img/zzccmxtp.svg';
+import anime from '../img/anime.svg';
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<html lang="fr" class="bg-zinc-900">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="twitter:dnt" content="on">
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<title>Zzccmxtp</title>
+		<style global>
+			@import "../styles/global.css";
+		</style>
+	</head>
+
+	<body>
+    <div class="flex justify-center relative h-screen">
+      <div id="particles-js2" class="absolute top-0 bottom-0 left-0 right-0 h-full w-full z-0"></div>
+      <img class="stroke-current w-auto z-10" src={zzLogo} alt="">
+      <div id="particles-js" class="absolute top-0 bottom-0 left-0 right-0 h-full w-full z-20"></div>
+      <!-- <img class="stroke-current absolute top-0 bottom-0 left-0 right-0 h-full w-full" src={anime} alt=""> -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="absolute bottom-0 mb-4 h-8 w-8 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+    </div>
+		<div class="container mx-auto px-4">
+			<!-- <List /> -->
+
+			<div id="tweets" class="flex flex-wrap gap-1 justify-center mt-4">
+				<!-- <Tweet tweetId="1486759671851589645" url="https://twitter.com/MehdiMouse/status/1486759671851589645" /> -->
+				<!-- <Tweet tweetId="1470447253110276099" url="https://twitter.com/zizicaca_actu/status/1470447253110276099?s=21" />
+				<Tweet tweetId="1470072367837818887" url="https://twitter.com/zizicaca_actu/status/1470072367837818887?s=21" />
+				<Tweet tweetId="1469740223248621572" url="https://twitter.com/dimeh_todo/status/1469740223248621572?s=21" />
+				<Tweet tweetId="1461771378248634369" url="https://twitter.com/zizicaca_actu/status/1461771378248634369?s=21" />
+				<Tweet tweetId="1456683996558069760" url="https://twitter.com/zizicaca_actu/status/1456683996558069760?s=21" />
+				<Tweet tweetId="1454834892567719939" url="https://twitter.com/zizicaca_actu/status/1454834892567719939?s=21" />
+				<Tweet tweetId="1454216075634114562" url="https://twitter.com/zizicaca_actu/status/1454216075634114562?s=21" />
+				<Tweet tweetId="1444743640887218179" url="https://twitter.com/kronomuzik/status/1444743640887218179?s=21" />
+				<Tweet tweetId="1438633754831036419" url="https://twitter.com/zizicaca_actu/status/1438633754831036419?s=21" /> -->
+			</div>
+		</div>
+
+
+    <script hoist>
+      function scrollIntoView(id) {
+        const element = document.getElementById(id);
+        console.log(element)
+
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" hoist></script>
+    <script>
+      const config = {
+        "particles": {
+          "number": {
+            "value": 50,
+            "density": {
+              "enable": true,
+              "value_area": 946.9771699587272
+            }
+          },
+          "color": {
+            "value": "#5fff7b"
+          },
+          "shape": {
+            "type": "image",
+            "stroke": {
+              "width": 0,
+              "color": "#000000"
+            },
+            "polygon": {
+              "nb_sides": 5
+            },
+            "image": {
+              "src": "/poo.png",
+              "width": 80,
+              "height": 80
+            }
+          },
+          "opacity": {
+            "value": 1,
+            "random": true,
+            "anim": {
+              "enable": true,
+              "speed": 1,
+              "opacity_min": 0,
+              "sync": false
+            }
+          },
+          "size": {
+            "value": 15.782952832645451,
+            "random": true,
+            "anim": {
+              "enable": false,
+              "speed": 4,
+              "size_min": 0.3,
+              "sync": false
+            }
+          },
+          "line_linked": {
+            "enable": false,
+            "distance": 150,
+            "color": "#ffffff",
+            "opacity": 0.4,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 5,
+            "direction": "none",
+            "random": true,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+              "enable": true,
+              "rotateX": 8417.913319543995,
+              "rotateY": 6814.5012586784715
+            }
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": {
+              "enable": true,
+              "mode": "repulse"
+            },
+            "resize": true
+          },
+          "modes": {
+            "repulse": {
+              "distance": 50.69080972218832,
+              "duration": 0.1
+            }
+          }
+        },
+        "retina_detect": true
+      };
+      particlesJS("particles-js", config)
+      config.particles.shape.image.src = '/zz.png'
+      particlesJS("particles-js2", config)
+    </script>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "@example/with-tailwindcss",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "astro": "^0.22.19",
+    "autoprefixer": "^10.4.0",
+    "tailwindcss": "^3.0.5"
+  },
+  "dependencies": {
+    "@astrojs/renderer-react": "^0.4.1",
+    "daisyui": "^1.25.4",
+    "date-fns": "^2.28.0",
+    "twitter-api-v2": "^1.10.0"
+  }
+}
