@@ -4,6 +4,7 @@ import Tweet from '../components/Tweet.astro';
 import List from '../components/List.astro';
 import zzLogo from '../img/zzccmxtp.svg';
 import anime from '../img/anime.svg';
+import githubImage from '../img/github-brands.svg';
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -26,14 +27,16 @@ import anime from '../img/anime.svg';
       <img class="stroke-current w-auto z-10" src={zzLogo} alt="">
       <div id="particles-js" class="absolute top-0 bottom-0 left-0 right-0 h-full w-full z-20"></div>
       <!-- <img class="stroke-current absolute top-0 bottom-0 left-0 right-0 h-full w-full" src={anime} alt=""> -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="absolute bottom-0 mb-4 h-8 w-8 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+      <a href="#" onclick="window.scrollIntoView('tweets')" class="absolute bottom-0 mb-4 h-8 w-8 animate-bounce z-40">
+        <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+      </a>
     </div>
 		<div class="container mx-auto px-4">
 			<!-- <List /> -->
 
 			<div id="tweets" class="flex flex-wrap gap-1 justify-center mt-4">
-				<!-- <Tweet tweetId="1486759671851589645" url="https://twitter.com/MehdiMouse/status/1486759671851589645" /> -->
-				<!-- <Tweet tweetId="1470447253110276099" url="https://twitter.com/zizicaca_actu/status/1470447253110276099?s=21" />
+				<Tweet tweetId="1486759671851589645" url="https://twitter.com/MehdiMouse/status/1486759671851589645" />
+				<Tweet tweetId="1470447253110276099" url="https://twitter.com/zizicaca_actu/status/1470447253110276099?s=21" />
 				<Tweet tweetId="1470072367837818887" url="https://twitter.com/zizicaca_actu/status/1470072367837818887?s=21" />
 				<Tweet tweetId="1469740223248621572" url="https://twitter.com/dimeh_todo/status/1469740223248621572?s=21" />
 				<Tweet tweetId="1461771378248634369" url="https://twitter.com/zizicaca_actu/status/1461771378248634369?s=21" />
@@ -41,19 +44,40 @@ import anime from '../img/anime.svg';
 				<Tweet tweetId="1454834892567719939" url="https://twitter.com/zizicaca_actu/status/1454834892567719939?s=21" />
 				<Tweet tweetId="1454216075634114562" url="https://twitter.com/zizicaca_actu/status/1454216075634114562?s=21" />
 				<Tweet tweetId="1444743640887218179" url="https://twitter.com/kronomuzik/status/1444743640887218179?s=21" />
-				<Tweet tweetId="1438633754831036419" url="https://twitter.com/zizicaca_actu/status/1438633754831036419?s=21" /> -->
+				<Tweet tweetId="1438633754831036419" url="https://twitter.com/zizicaca_actu/status/1438633754831036419?s=21" />
 			</div>
 		</div>
 
+    <footer class="items-center p-4 footer bg-neutral text-neutral-content">
+      <div class="items-center grid-flow-col">
+        <p class="w-3/4 ">
+          Y'a rien tqt, j'ai volé le domain me je le rend portez pas plainte svpppp, si il manque des feat envoi un tweet (la yen manque psq j'ai pas tt mis j'avais la flemme). Des bisous de moi même (cc krono bg un peu)
+          <br>
+          <br>
+          Oh, le site est opensource tu peux proposer des trucs sur github oué oué le boss (tu connais le css (et je parle pas de counter strike lol))
+        </p>
+      </div>
+      <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+        <a href="https://twitter.com/aLpr4zZ">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
+            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+          </svg>
+        </a>
+        <a href="https://github.com/o3LL/zzccmxtp">
+          <img src={githubImage} alt="" width="24" height="24" class="fill-white">
+        </a>
+      </div>
+    </footer>
+
+
 
     <script hoist>
+      // marche pas flemme
       function scrollIntoView(id) {
         const element = document.getElementById(id);
-        console.log(element)
 
         element.scrollIntoView({
           behavior: 'smooth',
-          block: 'start'
         })
       }
     </script>
