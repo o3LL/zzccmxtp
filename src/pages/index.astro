@@ -22,12 +22,12 @@ import githubImage from '../img/github-brands.svg';
 	</head>
 
 	<body>
-    <div class="flex justify-center relative h-screen">
+    <div class="flex justify-center h-screen">
       <div id="particles-js2" class="absolute top-0 bottom-0 left-0 right-0 h-full w-full z-0"></div>
       <img class="stroke-current w-auto z-10" src={zzLogo} alt="">
       <div id="particles-js" class="absolute top-0 bottom-0 left-0 right-0 h-full w-full z-20"></div>
       <!-- <img class="stroke-current absolute top-0 bottom-0 left-0 right-0 h-full w-full" src={anime} alt=""> -->
-      <a href="#" onclick="window.scrollIntoView('tweets')" class="absolute bottom-0 mb-4 h-8 w-8 animate-bounce z-40">
+      <a href="#tweets" id="scroller" class="absolute bottom-0 mb-4 h-8 w-8 animate-bounce z-40">
         <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
       </a>
     </div>
@@ -35,7 +35,40 @@ import githubImage from '../img/github-brands.svg';
 			<!-- <List /> -->
 
 			<div id="tweets" class="flex flex-wrap gap-1 justify-center mt-4 mb-4">
-				<Tweet tweetId="1486759671851589645" url="https://twitter.com/MehdiMouse/status/1486759671851589645" />
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+				<!-- <Tweet tweetId="1486759671851589645" url="https://twitter.com/MehdiMouse/status/1486759671851589645" />
 				<Tweet tweetId="1470447253110276099" url="https://twitter.com/zizicaca_actu/status/1470447253110276099?s=21" />
 				<Tweet tweetId="1470072367837818887" url="https://twitter.com/zizicaca_actu/status/1470072367837818887?s=21" />
 				<Tweet tweetId="1469740223248621572" url="https://twitter.com/dimeh_todo/status/1469740223248621572?s=21" />
@@ -44,7 +77,7 @@ import githubImage from '../img/github-brands.svg';
 				<Tweet tweetId="1454834892567719939" url="https://twitter.com/zizicaca_actu/status/1454834892567719939?s=21" />
 				<Tweet tweetId="1454216075634114562" url="https://twitter.com/zizicaca_actu/status/1454216075634114562?s=21" />
 				<Tweet tweetId="1444743640887218179" url="https://twitter.com/kronomuzik/status/1444743640887218179?s=21" />
-				<Tweet tweetId="1438633754831036419" url="https://twitter.com/zizicaca_actu/status/1438633754831036419?s=21" />
+				<Tweet tweetId="1438633754831036419" url="https://twitter.com/zizicaca_actu/status/1438633754831036419?s=21" /> -->
 			</div>
 		</div>
 
@@ -69,20 +102,6 @@ import githubImage from '../img/github-brands.svg';
       </div>
     </footer>
 
-
-
-    <script hoist>
-      // marche pas flemme
-      function scrollIntoView(id) {
-        const element = document.getElementById(id);
-
-        element.scrollIntoView({
-          behavior: 'smooth',
-        })
-      }
-    </script>
-
-    <script id="prtcscript" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" hoist></script>
     <script>
       const config = {
         "particles": {
@@ -172,13 +191,17 @@ import githubImage from '../img/github-brands.svg';
         "retina_detect": true
       };
 
-      var prtcScript = document.getElementById('prtcscript');
+      const prtcScript = document.createElement('script');
+      prtcScript.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
+      document.head.appendChild(prtcScript);
+
       // Dumb load event...
-      prtcScript.addEventListener('load', () => {
-         particlesJS("particles-js", config)
+      prtcScript.onload = () => {
+        console.log('load script')
+        particlesJS("particles-js", config)
         config.particles.shape.image.src = '/zz.png'
         particlesJS("particles-js2", config)
-      });
+      }
     </script>
 	</body>
 </html>
