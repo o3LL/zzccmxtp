@@ -6,43 +6,49 @@ async function fetchTweetsHtml(id) {
   const res = await getSingleTweet(id)
   return res
 }
- // caca 
+
 const tweet = await fetchTweetsHtml(tweetId)
 ---
-
-<div class="bg-gray-800 border-gray-800 p-4 rounded-xl border lg:max-w-xl h-full">
-  <!-- Tweet header -->
-  <div class="flex justify-between">
-    <div class="flex items-center">
-      <img class="h-11 w-11 rounded-full" src={tweet.includes.users[0].profile_image_url}/>
-      <div class="ml-1.5 text-sm leading-tight">
-        <span class="text-white font-bold block ">{tweet.includes.users[0].name}</span>
-        <span class="text-gray-400 font-normal block">@{tweet.includes.users[0].username}</span>
+<div class="">
+  <div class="bg-gray-800 border-gray-800 p-4 rounded-xl border lg:max-w-xl h-full">
+    <!-- Tweet header -->
+    <div class="flex justify-between mb-4">
+      <div class="flex items-center">
+        <img class="h-11 w-11 rounded-full" src={tweet.includes.users[0].profile_image_url}/>
+        <div class="ml-1.5 text-sm leading-tight">
+          <span class="text-white font-bold block ">{tweet.includes.users[0].name}</span>
+          <span class="text-gray-400 font-normal block">@{tweet.includes.users[0].username}</span>
+        </div>
+      </div>
+      <svg class="text-white h-6 w-auto inline-block fill-current" viewBox="0 0 24 24"><g><path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"></path></g></svg>
+    </div>
+    <!-- Tweet Content-->
+    <div class="flex gap-4">
+      <p class="text-justify leading-relaxed text-white block text-lg leading-snug">{tweet.data.text}</p>
+      <div class="md:shrink-0">
+      {
+        tweet.includes.media &&
+        <img class="inline h-48 h-full  mt-2 rounded-2xl border border-gray-700" src={tweet.includes.media[0].type === 'video' ? tweet.includes.media[0].preview_image_url : tweet.includes.media[0].url}/>
+      }
       </div>
     </div>
-    <svg class="text-white h-6 w-auto inline-block fill-current" viewBox="0 0 24 24"><g><path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"></path></g></svg>
-  </div>
-  <!-- Tweet Content-->
-  <p class="text-white block text-xl leading-snug mt-3">{tweet.data.text}</p>
-  {
-    tweet.includes.media &&
-    <img class="mt-2 rounded-2xl border border-gray-700" src={tweet.includes.media[0].type === 'video' ? tweet.includes.media[0].preview_image_url : tweet.includes.media[0].url}/>
-  }
-  <p class="text-gray-400 text-base py-1 my-0.5">{tweet.data.created_at}</p>
-  <div class="border-gray-600 border border-b-0 my-1"></div>
-  <!-- Tweet footer -->
-  <div class="text-gray-400 flex mt-3">
-  <div class="flex items-center mr-6">
-      <svg class="fill-current h-5 w-auto" viewBox="0 0 75 72"><path d="M70.676 36.644C70.166 35.636 69.13 35 68 35h-7V19c0-2.21-1.79-4-4-4H34c-2.21 0-4 1.79-4 4s1.79 4 4 4h18c.552 0 .998.446 1 .998V35h-7c-1.13 0-2.165.636-2.676 1.644-.51 1.01-.412 2.22.257 3.13l11 15C55.148 55.545 56.046 56 57 56s1.855-.455 2.42-1.226l11-15c.668-.912.767-2.122.256-3.13zM40 48H22c-.54 0-.97-.427-.992-.96L21 36h7c1.13 0 2.166-.636 2.677-1.644.51-1.01.412-2.22-.257-3.13l-11-15C18.854 15.455 17.956 15 17 15s-1.854.455-2.42 1.226l-11 15c-.667.912-.767 2.122-.255 3.13C3.835 35.365 4.87 36 6 36h7l.012 16.003c.002 2.208 1.792 3.997 4 3.997h22.99c2.208 0 4-1.79 4-4s-1.792-4-4-4z"/></svg>
-      <span class="ml-3">{tweet.data.public_metrics.retweet_count}</span>
-    </div>
+
+    <p class="text-gray-400 text-base py-1 my-0.5">{tweet.data.created_at}</p>
+    <div class="border-gray-600 border border-b-0 my-1"></div>
+    <!-- Tweet footer -->
+    <div class="text-gray-400 flex mt-3">
     <div class="flex items-center mr-6">
-      <svg class="fill-current h-5 w-auto" viewBox="0 0 54 72"><path d="M38.723,12c-7.187,0-11.16,7.306-11.723,8.131C26.437,19.306,22.504,12,15.277,12C8.791,12,3.533,18.163,3.533,24.647 C3.533,39.964,21.891,55.907,27,56c5.109-0.093,23.467-16.036,23.467-31.353C50.467,18.163,45.209,12,38.723,12z"/></svg>
-      <span class="ml-3">{tweet.data.public_metrics.like_count}</span>
-    </div>
-    <div class="flex items-center mr-6">
-      <svg class="fill-current h-5 w-auto" viewBox="0 0 65 72"><path d="M41 31h-9V19c0-1.14-.647-2.183-1.668-2.688-1.022-.507-2.243-.39-3.15.302l-21 16C5.438 33.18 5 34.064 5 35s.437 1.82 1.182 2.387l21 16c.533.405 1.174.613 1.82.613.453 0 .908-.103 1.33-.312C31.354 53.183 32 52.14 32 51V39h9c5.514 0 10 4.486 10 10 0 2.21 1.79 4 4 4s4-1.79 4-4c0-9.925-8.075-18-18-18z"/></svg>
-      <span class="ml-3">{tweet.data.public_metrics.reply_count}</span>
+        <svg class="fill-current h-5 w-auto" viewBox="0 0 75 72"><path d="M70.676 36.644C70.166 35.636 69.13 35 68 35h-7V19c0-2.21-1.79-4-4-4H34c-2.21 0-4 1.79-4 4s1.79 4 4 4h18c.552 0 .998.446 1 .998V35h-7c-1.13 0-2.165.636-2.676 1.644-.51 1.01-.412 2.22.257 3.13l11 15C55.148 55.545 56.046 56 57 56s1.855-.455 2.42-1.226l11-15c.668-.912.767-2.122.256-3.13zM40 48H22c-.54 0-.97-.427-.992-.96L21 36h7c1.13 0 2.166-.636 2.677-1.644.51-1.01.412-2.22-.257-3.13l-11-15C18.854 15.455 17.956 15 17 15s-1.854.455-2.42 1.226l-11 15c-.667.912-.767 2.122-.255 3.13C3.835 35.365 4.87 36 6 36h7l.012 16.003c.002 2.208 1.792 3.997 4 3.997h22.99c2.208 0 4-1.79 4-4s-1.792-4-4-4z"/></svg>
+        <span class="ml-3">{tweet.data.public_metrics.retweet_count}</span>
+      </div>
+      <div class="flex items-center mr-6">
+        <svg class="fill-current h-5 w-auto" viewBox="0 0 54 72"><path d="M38.723,12c-7.187,0-11.16,7.306-11.723,8.131C26.437,19.306,22.504,12,15.277,12C8.791,12,3.533,18.163,3.533,24.647 C3.533,39.964,21.891,55.907,27,56c5.109-0.093,23.467-16.036,23.467-31.353C50.467,18.163,45.209,12,38.723,12z"/></svg>
+        <span class="ml-3">{tweet.data.public_metrics.like_count}</span>
+      </div>
+      <div class="flex items-center mr-6">
+        <svg class="fill-current h-5 w-auto" viewBox="0 0 65 72"><path d="M41 31h-9V19c0-1.14-.647-2.183-1.668-2.688-1.022-.507-2.243-.39-3.15.302l-21 16C5.438 33.18 5 34.064 5 35s.437 1.82 1.182 2.387l21 16c.533.405 1.174.613 1.82.613.453 0 .908-.103 1.33-.312C31.354 53.183 32 52.14 32 51V39h9c5.514 0 10 4.486 10 10 0 2.21 1.79 4 4 4s4-1.79 4-4c0-9.925-8.075-18-18-18z"/></svg>
+        <span class="ml-3">{tweet.data.public_metrics.reply_count}</span>
+      </div>
     </div>
   </div>
 </div>
