@@ -20,6 +20,19 @@ export async function getSingleTweet(id) {
         'user.fields': ['url', 'username', 'profile_image_url']
     });
 
+    response.includes.users[0].profile_image_url = await twitterImageToLocal(response.includes.users[0].profile_image_url, id, true);
+    if (response.includes?.media?.[0]?.preview_image_url) {
+        response.includes.media[0].preview_image_url = await twitterImageToLocal(response.includes.media[0].preview_image_url, id, false);
+    }
+
     tweetCache.set(id, response);
     return response;
+}
+
+async function twitterImageToLocal(url: string, id: string, isProfil: boolean) {
+    const response = await fetch(url);
+    const image = await response.blob();
+    
+    // TypeError [ERR_INVALID_ARG_TYPE]: The "obj" argument must be an instance of Blob. Received an instance of Blob
+    return URL.createObjectURL(image);
 }
