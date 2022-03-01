@@ -5,48 +5,97 @@ import List from '../components/List.astro';
 import zzLogo from '../img/zzccmxtp.svg';
 import anime from '../img/anime.svg';
 import githubImage from '../img/github-brands.svg';
+import Player from '../components/Player.astro'
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
-<html lang="fr" class="bg-zinc-900">
-	<head>
-    <!-- Les classiques -->
-		<meta charset="UTF-8" />
-		<meta name="twitter:dnt" content="on">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="fr"  data-theme="dark">
+<head>
+  <!-- Les classiques -->
+  <meta charset="UTF-8" />
+  <meta name="twitter:dnt" content="on">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- La base -->
-		<title>Zzccmxtp - Le site non-officiel (pour l'instant) 💩</title>
-    <link rel="icon" type="image/png" href="poo.png">
+  <!-- La base -->
+  <title>Zzccmxtp - Le site non-officiel (pour l'instant) 💩</title>
+  <link rel="icon" type="image/png" href="poo.png">
 
-    <!-- Le gros SEO des familles -->
-    <meta property="og:title" content="Zzccmxtp" />
-    <meta property="og:site_name" content="Zzccmxtp" />
-    <meta property="og:description" content="Le site non-officiel de la zzccmxtp." />
-		<meta property="og:locale" content="fr_FR" />
+  <!-- Le gros SEO des familles -->
+  <meta property="og:title" content="Zzccmxtp" />
+  <meta property="og:site_name" content="Zzccmxtp" />
+  <meta property="og:description" content="Le site non-officiel de la zzccmxtp." />
+  <meta property="og:locale" content="fr_FR" />
 
-    <!-- Le CSS -->
-    <style global>
-			@import "../styles/global.css";
-		</style>
-	</head>
+  <!-- Le CSS -->
+  <style global>
+    @import "../styles/global.css";
+  </style>
+</head>
 
-	<body>
-    <div class="flex justify-center h-screen">
-      <div id="particles-js2" class="absolute top-0 bottom-0 left-0 right-0 h-full w-full z-0"></div>
-      <img class="stroke-current w-auto z-10" src={zzLogo} alt="">
-      <div id="particles-js" class="absolute top-0 bottom-0 left-0 right-0 h-full w-full z-20"></div>
-      <!-- <img class="stroke-current absolute top-0 bottom-0 left-0 right-0 h-full w-full" src={anime} alt=""> -->
-      <a href="#tweets" id="scroller" class="absolute bottom-0 mb-4 h-8 w-8 animate-bounce z-40">
-        <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
-      </a>
+<body>
+  <div class="text-center pt-12">
+    <h1 class="text-accent font-bold text-5xl lg:text-7xl">ZZCCMXTP</h1>
+    <h5 class="text-xs font-light">Le site pas officiel du tout</h5>
+  </div>
+  <div class="flex justify-center lg:h-screen">
+    <div class="lg:relative mx-10 my-20 lg:w-full lg:h-auto z-20">
+      <Player url="/TRACKLIST.webm" type="video" ></Player>
     </div>
-		<div class="container mx-auto px-4">
-			<!-- <List /> -->
+    <div id="particles-js2" class="absolute top-0 bottom-0 left-0 right-0 h-full w-full z-0"></div>
+    <div id="particles-js" class="absolute top-0 bottom-0 left-0 right-0 h-full w-full z-0"></div>
+    <a href="#tweets" id="scroller" class="absolute bottom-0 mb-4 h-8 w-8 animate-bounce z-40 lg:visible invisible">
+      <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+    </a>
+  </div>
+  <div class="container mx-auto px-4 z-20">
+    <h2 class="text-2xl lg:text-5xl text-center mb-5">Les sons extrait du jeu ZZCC™ LA LEGENDRE (<a
+        class="link link-accent"
+        href="https://zzcc.fr/">téléchargeable ici notamment</a>)</h2>
 
-			<div id="tweets" class="flex items-center flex-wrap gap-4 justify-center mt-4 mb-8">
+    <div class="mx-auto w-full lg:w-1/2 text-center">
+      <p class="text-sm lg:text-base">Volume (pour pas reveiller maman)</p>
+      <p>Volume actuel : <span class="text-accent" id="volume">75</span>/100</p>
+
+      <script>
+      const volume = document.getElementById('volume');
+      function handleVolume(event) {
+        const media = document.body.querySelectorAll('audio, video')
+        volume.innerText = event.target.value;
+
+        for (var i = 0; i < media.length; i++) {
+          media[i].volume = event.target.value / 100;
+        };
+      }
+      </script>
+      <input type="range" min="0" max="100" value="75" class="range range-accent mt-2" oninput="handleVolume(event)">
+    </div>
+
+    <div class="flex items-center flex-wrap gap-4 justify-center mt-4 mb-8">
+      <Player titre="3 Freres Topline" url="/audio/3freres_topline.ogg" ></Player>
+      <Player titre="Bagarre Legende ZZCC" url="/audio/bagarre_legende_zzcc.ogg" ></Player>
+      <Player titre="Balade de panpan" url="/audio/balade_de_panpan.ogg" ></Player>
+      <Player titre="Le bon JAZZ" url="/audio/JAZZ_32.ogg" ></Player>
+      <Player titre="Squiizie ?" url="/audio/LV2_53.ogg" ></Player>
+      <Player titre="N64KIDDO - WE ALL FALL DOWN (un classique)" url="/audio/N64KIDDO_-_WE_ALL_FALL_DOWN.ogg" ></Player>
+      <Player titre="TwitterLand"  url="/audio/TwitterLand.ogg" ></Player>
+      <Player titre="Cacabox - All Night Extreme" url="/audio/cacabox_all_night_extreme.ogg" ></Player>
+      <Player titre="GRANDJD Voix (g reverse le son)" url="/audio/grandjd-voix-rereverse.ogg" ></Player>
+      <Player titre="Interlude Clash" url="/audio/interlude_clash.ogg" ></Player>
+      <Player titre="Le Rap de Krono" url="/audio/le_rap_de_krono.ogg" ></Player>
+      <Player titre="Musique Foret" url="/audio/musique_foret.ogg" ></Player>
+      <Player titre="Pandrezz - 4basses (142BPM)" url="/audio/pandrezz_-_4basses_142BPM.ogg" ></Player>
+      <Player titre="Pandrezz x sadtoi - Plasticine (encore un classik)" url="/audio/pandrezz_x_sadtoi_-_Plasticine.ogg" ></Player>
+      <Player titre="PipoLapi" url="/audio/pipolapi.ogg"></Player>
+      <Player titre="PPManga" url="/audio/ppmanga.ogg"></Player>
+      <Player titre="Smokin drogz" url="/audio/smokin-drogz-_1_.ogg"></Player>
+    </div>
+
+    <!-- <List /> -->
+
+    <!-- <div id="tweets" class="flex items-center flex-wrap gap-4 justify-center mt-4 mb-8">
 				<Tweet tweetId="1486759671851589645" url="https://twitter.com/MehdiMouse/status/1486759671851589645" />
 				<Tweet tweetId="1470447253110276099" url="https://twitter.com/zizicaca_actu/status/1470447253110276099?s=21" />
 				<Tweet tweetId="1470072367837818887" url="https://twitter.com/zizicaca_actu/status/1470072367837818887?s=21" />
@@ -57,130 +106,135 @@ import githubImage from '../img/github-brands.svg';
 				<Tweet tweetId="1454216075634114562" url="https://twitter.com/zizicaca_actu/status/1454216075634114562?s=21" />
 				<Tweet tweetId="1444743640887218179" url="https://twitter.com/kronomuzik/status/1444743640887218179?s=21" />
 				<Tweet tweetId="1438633754831036419" url="https://twitter.com/zizicaca_actu/status/1438633754831036419?s=21" />
-			</div>
-		</div>
+			</div> -->
+  </div>
 
-    <footer class="items-center p-4 footer bg-neutral text-neutral-content">
-      <div class="items-center grid-flow-col">
-        <p class="w-3/4 ">
-          Y'a rien tqt, j'ai volé le domain me je le rend portez pas plainte svpppp, si il manque des feat envoi un tweet (la yen manque psq j'ai pas tt mis j'avais la flemme). Des bisous de moi même (cc krono bg un peu)
-          <br>
-          <br>
-          Oh, le site est opensource tu peux proposer des trucs sur github oué oué le boss (tu connais le css (et je parle pas de counter strike lol))
-        </p>
-      </div>
-      <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-        <a href="https://twitter.com/aLpr4zZ">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
-            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-          </svg>
-        </a>
-        <a href="https://github.com/o3LL/zzccmxtp">
-          <img src={githubImage} alt="" width="24" height="24" class="fill-white">
-        </a>
-      </div>
-    </footer>
+  <footer class="items-center p-4 footer bg-base-200 text-neutral-content">
+    <div class="items-center grid-flow-col">
+      <p class="w-3/4 ">
+        Y'a rien tqt, j'ai volé le domain me je le rend portez pas plainte svpppp, bon ok j'ai un peu volé des trucs dans votre jeu mais c'est pour le
+        bien commun, ca fait du teasing pour ceux qui ont la flemme de jouer (dsl le developer pandrzz). Des bisous de moi même (cc krono bg un peu)
+        <br>
+        <br>
+        Oh, le site est opensource tu peux proposer des trucs sur github oué oué le boss (tu connais le css (et je parle
+        pas de counter strike lol))
+      </p>
+    </div>
+    <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+      <a href="https://twitter.com/aLpr4zZ">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
+          <path
+            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
+          </path>
+        </svg>
+      </a>
+      <a href="https://github.com/o3LL/zzccmxtp">
+        <img src={githubImage} alt="" width="24" height="24" class="fill-white">
+      </a>
+    </div>
+  </footer>
 
-    <script>
-      const config = {
-        "particles": {
-          "number": {
-            "value": 30,
-            "density": {
-              "enable": true,
-              "value_area": 946.9771699587272
-            }
-          },
-          "color": {
-            "value": "#5fff7b"
-          },
-          "shape": {
-            "type": "image",
-            "stroke": {
-              "width": 0,
-              "color": "#000000"
-            },
-            "polygon": {
-              "nb_sides": 5
-            },
-            "image": {
-              "src": "/poo.png",
-              "width": 80,
-              "height": 80
-            }
-          },
-          "opacity": {
-            "value": 1,
-            "random": true,
-            "anim": {
-              "enable": true,
-              "speed": 1,
-              "opacity_min": 0,
-              "sync": false
-            }
-          },
-          "size": {
-            "value": 15.782952832645451,
-            "random": true,
-            "anim": {
-              "enable": false,
-              "speed": 4,
-              "size_min": 0.3,
-              "sync": false
-            }
-          },
-          "line_linked": {
-            "enable": false,
-            "distance": 150,
-            "color": "#ffffff",
-            "opacity": 0.4,
-            "width": 1
-          },
-          "move": {
+  <script>
+    const config = {
+      "particles": {
+        "number": {
+          "value": 30,
+          "density": {
             "enable": true,
-            "speed": 5,
-            "direction": "none",
-            "random": true,
-            "straight": false,
-            "out_mode": "out",
-            "bounce": false,
-            "attract": {
-              "enable": true,
-              "rotateX": 8417.913319543995,
-              "rotateY": 6814.5012586784715
-            }
+            "value_area": 946.9771699587272
           }
         },
-        "interactivity": {
-          "detect_on": "canvas",
-          "events": {
-            "onhover": {
-              "enable": true,
-              "mode": "repulse"
-            },
-            "resize": true
+        "color": {
+          "value": "#5fff7b"
+        },
+        "shape": {
+          "type": "image",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
           },
-          "modes": {
-            "repulse": {
-              "distance": 50.69080972218832,
-              "duration": 0.1
-            }
+          "polygon": {
+            "nb_sides": 5
+          },
+          "image": {
+            "src": "/poo.png",
+            "width": 80,
+            "height": 80
           }
         },
-        "retina_detect": true
-      };
+        "opacity": {
+          "value": 1,
+          "random": true,
+          "anim": {
+            "enable": true,
+            "speed": 1,
+            "opacity_min": 0,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 15.782952832645451,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 4,
+            "size_min": 0.3,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": false,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 5,
+          "direction": "none",
+          "random": true,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": true,
+            "rotateX": 8417.913319543995,
+            "rotateY": 6814.5012586784715
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          },
+          "resize": true
+        },
+        "modes": {
+          "repulse": {
+            "distance": 50.69080972218832,
+            "duration": 0.1
+          }
+        }
+      },
+      "retina_detect": true
+    };
 
-      const prtcScript = document.createElement('script');
-      prtcScript.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
-      document.head.appendChild(prtcScript);
+    const prtcScript = document.createElement('script');
+    prtcScript.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
+    document.head.appendChild(prtcScript);
 
-      // Dumb load event...
-      prtcScript.onload = () => {
-        console.log('load script')
-        particlesJS("particles-js", config)
-        config.particles.shape.image.src = '/zz.png'
-        particlesJS("particles-js2", config)
-      }
-    </script>
-	</body>
+    // Dumb load event...
+    prtcScript.onload = () => {
+      console.log('load script')
+      particlesJS("particles-js", config)
+      config.particles.shape.image.src = '/zz.png'
+      particlesJS("particles-js2", config)
+    }
+  </script>
+</body>
+
 </html>
