@@ -1,0 +1,55 @@
+---
+const {titre, type, url} = Astro.props;
+---
+
+<script hoist>
+function handlePause(event) {
+  // c'est degeu lol
+  event.target.parentNode.parentNode.parentNode.classList.remove('ring-1')
+}
+
+function handlePlay(event, isSound) {
+  if(isSound) {
+    event.target.parentNode.parentNode.parentNode.classList.add('ring-1')
+  }
+
+  const media = document.body.querySelectorAll('audio, video')
+  for (var i = 0; i < media.length; i++) {
+    if(media[i] !== event.target) {
+      media[i].pause();
+    }
+  };
+}
+</script>
+
+{
+  type === "video" &&
+  <div class="ring-1 ring-accent ring-offset-2 ring-offset-accent-focus">
+    <video
+      class=""
+      controls={true}
+      onplay="handlePlay(event)"
+      volume="0.75"
+      src={url}>
+      <p>Bah alors, ton navigateur est naze.</p>
+    </video>
+  </div>
+}
+{
+  !type &&
+  <div class="card w-96 bg-base-200 shadow-xl ring-accent">
+    <div class="card-body">
+      <h2 class="card-title">{titre}</h2>
+      <figure>
+        <audio
+          class="mt-2"
+          controls={true}
+          volume="0.75"
+          onplay="handlePlay(event, true)"
+          onpause="handlePause(event)"
+          src={url}
+        ></audio>
+      </figure>
+    </div>
+  </div>
+}

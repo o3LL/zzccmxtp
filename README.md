@@ -1,11 +1,10 @@
-# Astro with Tailwind
+# ZZCCMXTP
 
+Débuter facilement
 ```
-npm init astro -- --template with-tailwindcss
+npm i
+npm run dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-
-Astro comes with [Tailwind](https://tailwindcss.com) support out of the box. This example showcases how to style your Astro project with Tailwind.
-
-For complete setup instructions, please see our [Styling Guide](https://docs.astro.build/guides/styling#-tailwind).
+Bon t'as peu être pas vue mais le projet est bien dégeu j'ai fais ça vraiment à l'arrache pour tester Astro, j'espère que tu ne m'en voudra pas.
+Si toi aussi t'as envie de t'amuser n'hésite pas à ouvrir une PR !
