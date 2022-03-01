@@ -10,4 +10,7 @@
 export default /** @type {import('astro').AstroUserConfig} */ ({
 	// Enable the Preact renderer to support Preact JSX components.
 	renderers: ['@astrojs/renderer-react','@astrojs/renderer-preact'],
+	devOptions: {
+		hostname: '0.0.0.0'
+	}
 });

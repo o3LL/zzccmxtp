@@ -11,42 +11,65 @@ import githubImage from '../img/github-brands.svg';
 ---
 
 <html lang="fr" class="bg-zinc-900">
-	<head>
-    <!-- Les classiques -->
-		<meta charset="UTF-8" />
-		<meta name="twitter:dnt" content="on">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <!-- Les classiques -->
+  <meta charset="UTF-8" />
+  <meta name="twitter:dnt" content="on">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- La base -->
-		<title>Zzccmxtp - Le site non-officiel (pour l'instant) 💩</title>
-    <link rel="icon" type="image/png" href="poo.png">
+  <!-- La base -->
+  <title>Zzccmxtp - Le site non-officiel (pour l'instant) 💩</title>
+  <link rel="icon" type="image/png" href="poo.png">
 
-    <!-- Le gros SEO des familles -->
-    <meta property="og:title" content="Zzccmxtp" />
-    <meta property="og:site_name" content="Zzccmxtp" />
-    <meta property="og:description" content="Le site non-officiel de la zzccmxtp." />
-		<meta property="og:locale" content="fr_FR" />
+  <!-- Le gros SEO des familles -->
+  <meta property="og:title" content="Zzccmxtp" />
+  <meta property="og:site_name" content="Zzccmxtp" />
+  <meta property="og:description" content="Le site non-officiel de la zzccmxtp." />
+  <meta property="og:locale" content="fr_FR" />
 
-    <!-- Le CSS -->
-    <style global>
-			@import "../styles/global.css";
-		</style>
-	</head>
+  <!-- Le CSS -->
+  <style global>
+    @import "../styles/global.css";
+  </style>
+</head>
 
-	<body>
-    <div class="flex justify-center h-screen">
-      <div id="particles-js2" class="absolute top-0 bottom-0 left-0 right-0 h-full w-full z-0"></div>
-      <img class="stroke-current w-auto z-10" src={zzLogo} alt="">
-      <div id="particles-js" class="absolute top-0 bottom-0 left-0 right-0 h-full w-full z-20"></div>
-      <!-- <img class="stroke-current absolute top-0 bottom-0 left-0 right-0 h-full w-full" src={anime} alt=""> -->
-      <a href="#tweets" id="scroller" class="absolute bottom-0 mb-4 h-8 w-8 animate-bounce z-40">
-        <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
-      </a>
-    </div>
-		<div class="container mx-auto px-4">
-			<!-- <List /> -->
+<body>
+  <div class="flex justify-center h-screen">
+     <div class="lg:relative mx-10 my-20 lg:w-full lg:h-auto z-20">
+       <video controls class="lg:absolute inset-0 w-full h-full ">
+         <source src="/TRACKLIST.webm" type="video/webm">
+         <p>Ahaaha la honte ton navigateur sait pas lire les webm, télécharge en un vrai stp.</p>
+       </video>
+     </div>
+    <div id="particles-js2" class="absolute top-0 bottom-0 left-0 right-0 h-full w-full z-0"></div>
+    <div id="particles-js" class="absolute top-0 bottom-0 left-0 right-0 h-full w-full z-0"></div>
+    <a href="#tweets" id="scroller" class="absolute bottom-0 mb-4 h-8 w-8 animate-bounce z-40">
+      <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+    </a>
+  </div>
+  <div class="container mx-auto px-4">
+    <audio controls src="/audio/3freres_topline.ogg"></audio>
+    <audio controls src="/audio/bagarre_legende_zzcc.ogg"></audio>
+    <audio controls src="/audio/balade_de_panpan.ogg"></audio>
+    <audio controls src="/audio/JAZZ_32.ogg"></audio>
+    <audio controls src="/audio/LV2_53.ogg"></audio>
+    <audio controls src="/audio/N64KIDDO_-_WE_ALL_FALL_DOWN.ogg"></audio>
+    <audio controls src="/audio/TwitterLand.ogg"></audio>
+    <audio controls src="/audio/cacabox_all_night_extreme.ogg"></audio>
+    <audio controls src="/audio/grandjd-voix-rereverse.ogg"></audio>
+    <audio controls src="/audio/interlude_clash.ogg"></audio>
+    <audio controls src="/audio/le_rap_de_krono.ogg"></audio>
+    <audio controls src="/audio/musique_foret.ogg"></audio>
+    <audio controls src="/audio/pandrezz_-_4basses_142BPM.ogg"></audio>
+    <audio controls src="/audio/pandrezz_x_sadtoi_-_Plasticine.ogg"></audio>
+    <audio controls src="/audio/pipolapi.ogg"></audio>
+    <audio controls src="/audio/ppmanga.ogg"></audio>
+    <audio controls src="/audio/smokin-drogz-_1_.ogg"></audio>
 
-			<div id="tweets" class="flex items-center flex-wrap gap-4 justify-center mt-4 mb-8">
+    <!-- <List /> -->
+
+    <!-- <div id="tweets" class="flex items-center flex-wrap gap-4 justify-center mt-4 mb-8">
 				<Tweet tweetId="1486759671851589645" url="https://twitter.com/MehdiMouse/status/1486759671851589645" />
 				<Tweet tweetId="1470447253110276099" url="https://twitter.com/zizicaca_actu/status/1470447253110276099?s=21" />
 				<Tweet tweetId="1470072367837818887" url="https://twitter.com/zizicaca_actu/status/1470072367837818887?s=21" />
@@ -57,130 +80,135 @@ import githubImage from '../img/github-brands.svg';
 				<Tweet tweetId="1454216075634114562" url="https://twitter.com/zizicaca_actu/status/1454216075634114562?s=21" />
 				<Tweet tweetId="1444743640887218179" url="https://twitter.com/kronomuzik/status/1444743640887218179?s=21" />
 				<Tweet tweetId="1438633754831036419" url="https://twitter.com/zizicaca_actu/status/1438633754831036419?s=21" />
-			</div>
-		</div>
+			</div> -->
+  </div>
 
-    <footer class="items-center p-4 footer bg-neutral text-neutral-content">
-      <div class="items-center grid-flow-col">
-        <p class="w-3/4 ">
-          Y'a rien tqt, j'ai volé le domain me je le rend portez pas plainte svpppp, si il manque des feat envoi un tweet (la yen manque psq j'ai pas tt mis j'avais la flemme). Des bisous de moi même (cc krono bg un peu)
-          <br>
-          <br>
-          Oh, le site est opensource tu peux proposer des trucs sur github oué oué le boss (tu connais le css (et je parle pas de counter strike lol))
-        </p>
-      </div>
-      <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-        <a href="https://twitter.com/aLpr4zZ">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
-            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-          </svg>
-        </a>
-        <a href="https://github.com/o3LL/zzccmxtp">
-          <img src={githubImage} alt="" width="24" height="24" class="fill-white">
-        </a>
-      </div>
-    </footer>
+  <footer class="items-center p-4 footer bg-neutral text-neutral-content">
+    <div class="items-center grid-flow-col">
+      <p class="w-3/4 ">
+        Y'a rien tqt, j'ai volé le domain me je le rend portez pas plainte svpppp, si il manque des feat envoi un tweet
+        (la yen manque psq j'ai pas tt mis j'avais la flemme). Des bisous de moi même (cc krono bg un peu)
+        <br>
+        <br>
+        Oh, le site est opensource tu peux proposer des trucs sur github oué oué le boss (tu connais le css (et je parle
+        pas de counter strike lol))
+      </p>
+    </div>
+    <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+      <a href="https://twitter.com/aLpr4zZ">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
+          <path
+            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
+          </path>
+        </svg>
+      </a>
+      <a href="https://github.com/o3LL/zzccmxtp">
+        <img src={githubImage} alt="" width="24" height="24" class="fill-white">
+      </a>
+    </div>
+  </footer>
 
-    <script>
-      const config = {
-        "particles": {
-          "number": {
-            "value": 30,
-            "density": {
-              "enable": true,
-              "value_area": 946.9771699587272
-            }
-          },
-          "color": {
-            "value": "#5fff7b"
-          },
-          "shape": {
-            "type": "image",
-            "stroke": {
-              "width": 0,
-              "color": "#000000"
-            },
-            "polygon": {
-              "nb_sides": 5
-            },
-            "image": {
-              "src": "/poo.png",
-              "width": 80,
-              "height": 80
-            }
-          },
-          "opacity": {
-            "value": 1,
-            "random": true,
-            "anim": {
-              "enable": true,
-              "speed": 1,
-              "opacity_min": 0,
-              "sync": false
-            }
-          },
-          "size": {
-            "value": 15.782952832645451,
-            "random": true,
-            "anim": {
-              "enable": false,
-              "speed": 4,
-              "size_min": 0.3,
-              "sync": false
-            }
-          },
-          "line_linked": {
-            "enable": false,
-            "distance": 150,
-            "color": "#ffffff",
-            "opacity": 0.4,
-            "width": 1
-          },
-          "move": {
+  <script>
+    const config = {
+      "particles": {
+        "number": {
+          "value": 30,
+          "density": {
             "enable": true,
-            "speed": 5,
-            "direction": "none",
-            "random": true,
-            "straight": false,
-            "out_mode": "out",
-            "bounce": false,
-            "attract": {
-              "enable": true,
-              "rotateX": 8417.913319543995,
-              "rotateY": 6814.5012586784715
-            }
+            "value_area": 946.9771699587272
           }
         },
-        "interactivity": {
-          "detect_on": "canvas",
-          "events": {
-            "onhover": {
-              "enable": true,
-              "mode": "repulse"
-            },
-            "resize": true
+        "color": {
+          "value": "#5fff7b"
+        },
+        "shape": {
+          "type": "image",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
           },
-          "modes": {
-            "repulse": {
-              "distance": 50.69080972218832,
-              "duration": 0.1
-            }
+          "polygon": {
+            "nb_sides": 5
+          },
+          "image": {
+            "src": "/poo.png",
+            "width": 80,
+            "height": 80
           }
         },
-        "retina_detect": true
-      };
+        "opacity": {
+          "value": 1,
+          "random": true,
+          "anim": {
+            "enable": true,
+            "speed": 1,
+            "opacity_min": 0,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 15.782952832645451,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 4,
+            "size_min": 0.3,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": false,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 5,
+          "direction": "none",
+          "random": true,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": true,
+            "rotateX": 8417.913319543995,
+            "rotateY": 6814.5012586784715
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          },
+          "resize": true
+        },
+        "modes": {
+          "repulse": {
+            "distance": 50.69080972218832,
+            "duration": 0.1
+          }
+        }
+      },
+      "retina_detect": true
+    };
 
-      const prtcScript = document.createElement('script');
-      prtcScript.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
-      document.head.appendChild(prtcScript);
+    const prtcScript = document.createElement('script');
+    prtcScript.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
+    document.head.appendChild(prtcScript);
 
-      // Dumb load event...
-      prtcScript.onload = () => {
-        console.log('load script')
-        particlesJS("particles-js", config)
-        config.particles.shape.image.src = '/zz.png'
-        particlesJS("particles-js2", config)
-      }
-    </script>
-	</body>
+    // Dumb load event...
+    prtcScript.onload = () => {
+      console.log('load script')
+      particlesJS("particles-js", config)
+      config.particles.shape.image.src = '/zz.png'
+      particlesJS("particles-js2", config)
+    }
+  </script>
+</body>
+
 </html>
