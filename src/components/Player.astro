@@ -29,8 +29,10 @@ function handlePlay(event, isSound) {
       class=""
       controls={true}
       onplay="handlePlay(event)"
-      volume="0.75"
-      src={url}>
+      volume="0.75">
+      <!-- Safari still needs mp4... -->
+      <source src={`${url}.mp4`} type="video/mp4">
+      <source src={`${url}.webm`} type="video/webm">
       <p>Bah alors, ton navigateur est naze.</p>
     </video>
   </div>
@@ -47,8 +49,11 @@ function handlePlay(event, isSound) {
           volume="0.75"
           onplay="handlePlay(event, true)"
           onpause="handlePause(event)"
-          src={url}
-        ></audio>
+        >
+          <source src={`${url}.mp3`} type="audio/mpeg">
+          <source src={`${url}.ogg`} type="audio/ogg">
+          Alors là... Ton navigateur est vraiment tout pourri
+        </audio>
       </figure>
     </div>
   </div>

@@ -35,21 +35,22 @@ import Player from '../components/Player.astro'
 </head>
 
 <body>
-  <div class="text-center pt-12">
-    <h1 class="text-accent font-bold text-5xl lg:text-7xl">ZZCCMXTP</h1>
-    <h5 class="text-xs font-light">Le site pas officiel du tout</h5>
-  </div>
-  <div class="flex justify-center lg:h-screen">
-    <div class="lg:relative mx-10 my-10 lg:w-full lg:h-auto z-20 max-w-5xl">
-      <Player url="/TRACKLIST.webm" type="video" ></Player>
-    </div>
+  <div class="h-full w-full relative">
     <div id="particles-js2" class="absolute top-0 bottom-0 left-0 right-0 h-full w-full z-0"></div>
     <div id="particles-js" class="absolute top-0 bottom-0 left-0 right-0 h-full w-full z-0"></div>
-    <a href="#tweets" id="scroller" class="absolute bottom-0 mb-4 h-8 w-8 animate-bounce z-40 lg:visible invisible">
-      <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
-    </a>
+    <div class="text-center pt-12">
+      <h1 class="text-accent font-bold text-5xl lg:text-7xl">ZZCCMXTP</h1>
+      <h5 class="text-xs font-light">Le site pas officiel du tout</h5>
+    </div>
+    <div class="hero z-20">
+      <div class="text-center hero-content">
+        <div class="mx-10 my-10 lg:w-full lg:h-auto z-20 max-w-5xl">
+          <Player url="/TRACKLIST" type="video" ></Player>
+        </div>
+      </div>
+    </div>
   </div>
+  <div class="divider mx-10 mt-0 h-0"></div>
   <div class="container mx-auto px-4 z-20">
     <h2 class="text-2xl lg:text-5xl text-center mb-5">Les sons extrait du jeu ZZCC™ LA LEGENDRE (<a
         class="link link-accent"
@@ -74,23 +75,23 @@ import Player from '../components/Player.astro'
     </div>
 
     <div class="flex items-center flex-wrap gap-4 justify-center mt-4 mb-8">
-      <Player titre="3 Freres Topline" url="/audio/3freres_topline.ogg" ></Player>
-      <Player titre="Bagarre Legende ZZCC" url="/audio/bagarre_legende_zzcc.ogg" ></Player>
-      <Player titre="Balade de panpan" url="/audio/balade_de_panpan.ogg" ></Player>
-      <Player titre="Le bon JAZZ" url="/audio/JAZZ_32.ogg" ></Player>
-      <Player titre="Squiizie ?" url="/audio/LV2_53.ogg" ></Player>
-      <Player titre="N64KIDDO - WE ALL FALL DOWN (un classique)" url="/audio/N64KIDDO_-_WE_ALL_FALL_DOWN.ogg" ></Player>
-      <Player titre="TwitterLand"  url="/audio/TwitterLand.ogg" ></Player>
-      <Player titre="Cacabox - All Night Extreme" url="/audio/cacabox_all_night_extreme.ogg" ></Player>
-      <Player titre="GRANDJD Voix (g reverse le son)" url="/audio/grandjd-voix-rereverse.ogg" ></Player>
-      <Player titre="Interlude Clash" url="/audio/interlude_clash.ogg" ></Player>
-      <Player titre="Le Rap de Krono" url="/audio/le_rap_de_krono.ogg" ></Player>
-      <Player titre="Musique Foret" url="/audio/musique_foret.ogg" ></Player>
-      <Player titre="Pandrezz - 4basses (142BPM)" url="/audio/pandrezz_-_4basses_142BPM.ogg" ></Player>
-      <Player titre="Pandrezz x sadtoi - Plasticine (encore un classik)" url="/audio/pandrezz_x_sadtoi_-_Plasticine.ogg" ></Player>
-      <Player titre="PipoLapi" url="/audio/pipolapi.ogg"></Player>
-      <Player titre="PPManga" url="/audio/ppmanga.ogg"></Player>
-      <Player titre="Smokin drogz" url="/audio/smokin-drogz-_1_.ogg"></Player>
+      <Player titre="3 Freres Topline" url="/audio/3freres_topline" ></Player>
+      <Player titre="Bagarre Legende ZZCC" url="/audio/bagarre_legende_zzcc" ></Player>
+      <Player titre="Balade de panpan" url="/audio/balade_de_panpan" ></Player>
+      <Player titre="Le bon JAZZ" url="/audio/JAZZ_32" ></Player>
+      <Player titre="Squiizie ?" url="/audio/LV2_53" ></Player>
+      <Player titre="N64KIDDO - WE ALL FALL DOWN (un classique)" url="/audio/N64KIDDO_-_WE_ALL_FALL_DOWN" ></Player>
+      <Player titre="TwitterLand"  url="/audio/TwitterLand" ></Player>
+      <Player titre="Cacabox - All Night Extreme" url="/audio/cacabox_all_night_extreme" ></Player>
+      <Player titre="GRANDJD Voix (g reverse le son)" url="/audio/grandjd-voix-rereverse" ></Player>
+      <Player titre="Interlude Clash" url="/audio/interlude_clash" ></Player>
+      <Player titre="Le Rap de Krono" url="/audio/le_rap_de_krono" ></Player>
+      <Player titre="Musique Foret" url="/audio/musique_foret" ></Player>
+      <Player titre="Pandrezz - 4basses (142BPM)" url="/audio/pandrezz_-_4basses_142BPM" ></Player>
+      <Player titre="Pandrezz x sadtoi - Plasticine (encore un classik)" url="/audio/pandrezz_x_sadtoi_-_Plasticine" ></Player>
+      <Player titre="PipoLapi" url="/audio/pipolapi"></Player>
+      <Player titre="PPManga" url="/audio/ppmanga"></Player>
+      <Player titre="Smokin drogz" url="/audio/smokin-drogz-_1_"></Player>
     </div>
 
     <!-- <List /> -->
@@ -109,8 +110,8 @@ import Player from '../components/Player.astro'
 			</div> -->
   </div>
 
-  <footer class="items-center p-4 footer bg-base-200 text-neutral-content">
-    <div class="items-center grid-flow-col">
+  <footer class="p-10 footer bg-base-200 text-base-content footer-center rounded">
+    <div class="grid grid-flow-col gap-4">
       <p class="w-3/4 ">
         Y'a rien tqt, j'ai volé le domain me je le rend portez pas plainte svpppp, bon ok j'ai un peu volé des trucs dans votre jeu mais c'est pour le
         bien commun, ca fait du teasing pour ceux qui ont la flemme de jouer (dsl le developer pandrzz). Des bisous de moi même (cc krono bg un peu)
@@ -120,7 +121,7 @@ import Player from '../components/Player.astro'
         pas de counter strike lol))
       </p>
     </div>
-    <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+    <div class="grid grid-flow-col gap-4">
       <a href="https://twitter.com/aLpr4zZ">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
           <path
