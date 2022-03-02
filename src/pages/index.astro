@@ -4,8 +4,6 @@ import Media from '../components/Player/Media.astro';
 import Audio from '../components/Player/Audio.astro';
 import Macrongue from '../components/Macrongue.astro';
 import Particles from '../components/Particles.astro';
-
-import videoThumbnail from '../img/thumbnail.jpg';
 ---
 
 <BaseLayout>
@@ -20,7 +18,7 @@ import videoThumbnail from '../img/thumbnail.jpg';
     <div class="hero z-20">
       <div class="text-center hero-content">
         <div class="mx-10 my-10 lg:w-full lg:h-auto z-20 max-w-5xl">
-          <Media url="/TRACKLIST" type="video" thumbnail={videoThumbnail}></Media>
+          <Media url="/TRACKLIST" type="video" thumbnail="/thumbnail.webp" />
         </div>
       </div>
     </div>

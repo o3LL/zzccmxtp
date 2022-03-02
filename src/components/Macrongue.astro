@@ -1,6 +1,7 @@
 ---
-import MacrongueImage from '../img/19206-full.png';
-import Lequipe from '../img/lequip.png';
+import MacrongueImage from '../img/19206-full.webp';
+import Lequipe from '../img/lequip.webp';
+import twitterLogo from '../img/twitter.svg';
 ---
 <style>
 @keyframes shake {
@@ -49,7 +50,7 @@ const timeout = Math.floor(
 setTimeout(() => {
   const macrongue = document.getElementById('macrongue');
   macrongue.classList.remove('translate-y-full');
-}, timeout);
+}, 1);
 </script>
 
 <div>
@@ -67,12 +68,14 @@ setTimeout(() => {
     <p class="pt-4">Tu recoivre desrormais le badge du vaincreure! Tu peux annoncer a tous le mondre que toi aussi tu à vaincru le méchan macergonge!</p>
     <p class="py-4">Le monde va desormrais vraimen meiux !</p>
     <img src={Lequipe} alt="">
-
+    
     <div class="modal-action flex mt-4 items-center justify-center">
-      <div>
-        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button " data-size="large" data-text="Superbre j&#39;ai vaincu le mechan macrongue sur le site internert vraiment pas officielle de la #zzccmxtp ! C comme un mini jeu video en moin bien que le vrai jeu zzcc enfaitre" data-url="https://zzccmxtp.fr/" data-related="alpr4zz" data-lang="fr" data-show-count="false">Le partager sur twitteur</a>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </div>
+      <a href="https://twitter.com/intent/tweet?related=alpr4zz&text=Superbre%20j%27ai%20vaincu%20le%20mechan%20macrongue%20sur%20le%20site%20internert%20vraiment%20pas%20officielle%20de%20la%20%23zzccmxtp%20!%20C%20comme%20un%20mini%20jeu%20video%20en%20moin%20bien%20que%20le%20vrai%20jeu%20zzcc%20enfaitre&url=https%3A%2F%2Fzzccmxtp.fr%2F">
+        <div class="btn btn-sm rounded-full bg-[#1da1f2] text-white normal-case items-center">
+          <img src={twitterLogo} alt="Twitter logo" class="h-4 w-4 mr-2">
+          Le partager sur Twitteur
+        </div>
+      </a>
       <label for="modal-winner" class="btn btn-error btn-sm">Ne rien dire</label>
     </div>
   </div>
