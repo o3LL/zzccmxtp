@@ -1,5 +1,5 @@
 ---
-const {titre, type, url} = Astro.props;
+const {titre, type, url, thumbnail} = Astro.props;
 ---
 
 <script hoist>
@@ -26,9 +26,10 @@ function handlePlay(event, isSound) {
   type === "video" &&
   <div class="ring-1 ring-accent ring-offset-2 ring-offset-accent-focus">
     <video
-      class=""
+      poster={thumbnail}
       controls={true}
       onplay="handlePlay(event)"
+      preload="metadata"
       volume="0.75">
       <!-- Safari still needs mp4... -->
       <source src={`${url}.mp4`} type="video/mp4">
@@ -46,6 +47,7 @@ function handlePlay(event, isSound) {
         <audio
           class="mt-2"
           controls={true}
+          preload="metadata"
           volume="0.75"
           onplay="handlePlay(event, true)"
           onpause="handlePause(event)"

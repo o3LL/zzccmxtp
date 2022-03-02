@@ -1,0 +1,41 @@
+---
+import Media from './Media.astro';
+---
+
+<div class="mx-auto w-full lg:w-1/2 text-center hidden lg:block">
+      <p class="text-sm lg:text-base">Volume (pour pas reveiller maman)</p>
+      <p>Volume actuel : <span class="text-accent" id="volume">75</span>/100</p>
+
+      <script>
+      const volume = document.getElementById('volume');
+      function handleVolume(event) {
+        const media = document.body.querySelectorAll('audio, video')
+        volume.innerText = event.target.value;
+
+        for (var i = 0; i < media.length; i++) {
+          media[i].volume = event.target.value / 100;
+        };
+      }
+      </script>
+      <input type="range" min="0" max="100" value="75" class="range range-accent mt-2" oninput="handleVolume(event)">
+    </div>
+
+    <div class="flex items-center flex-wrap gap-4 justify-center mt-4 mb-8">
+      <Media titre="3 Freres Topline" url="/audio/3freres_topline" ></Media>
+      <Media titre="Bagarre Legende ZZCC" url="/audio/bagarre_legende_zzcc" ></Media>
+      <Media titre="Balade de panpan" url="/audio/balade_de_panpan" ></Media>
+      <Media titre="Le bon JAZZ" url="/audio/JAZZ_32" ></Media>
+      <Media titre="Squiizie ?" url="/audio/LV2_53" ></Media>
+      <Media titre="N64KIDDO - WE ALL FALL DOWN (un classique)" url="/audio/N64KIDDO_-_WE_ALL_FALL_DOWN" ></Media>
+      <Media titre="TwitterLand"  url="/audio/TwitterLand" ></Media>
+      <Media titre="Cacabox - All Night Extreme" url="/audio/cacabox_all_night_extreme" ></Media>
+      <Media titre="GRANDJD Voix (g reverse le son)" url="/audio/grandjd-voix-rereverse" ></Media>
+      <Media titre="Interlude Clash" url="/audio/interlude_clash" ></Media>
+      <Media titre="Le Rap de Krono" url="/audio/le_rap_de_krono" ></Media>
+      <Media titre="Musique Foret" url="/audio/musique_foret" ></Media>
+      <Media titre="Pandrezz - 4basses (142BPM)" url="/audio/pandrezz_-_4basses_142BPM" ></Media>
+      <Media titre="Pandrezz x sadtoi - Plasticine (encore un classik)" url="/audio/pandrezz_x_sadtoi_-_Plasticine" ></Media>
+      <Media titre="PipoLapi" url="/audio/pipolapi"></Media>
+      <Media titre="PPManga" url="/audio/ppmanga"></Media>
+      <Media titre="Smokin drogz" url="/audio/smokin-drogz-_1_"></Media>
+    </div>
