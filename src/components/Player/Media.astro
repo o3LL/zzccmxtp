@@ -2,6 +2,10 @@
 const {titre, type, url, thumbnail} = Astro.props;
 ---
 <script hoist>
+function playSound(event) {
+  event.target.getElementsByTagName('audio').play();
+}
+
 function handlePause(event) {
   // c'est degeu lol
   event.target.parentNode.parentNode.parentNode.classList.remove('ring-1')
@@ -39,7 +43,7 @@ function handlePlay(event, isSound) {
 }
 {
   !type &&
-  <div class="card w-96 bg-base-200 shadow-xl ring-accent">
+  <div class="card w-96 bg-base-200 shadow-xl ring-accent" onclick="playSound(event)">
     <div class="card-body">
       <h2 class="card-title">{titre}</h2>
       <figure>
