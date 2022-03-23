@@ -1,12 +1,26 @@
 ---
 import BaseLayout from '../layouts/Base.astro';
-import Media from '../components/Player/Media.astro';
 import Audio from '../components/Player/Audio.astro';
 import Particles from '../components/Particles.astro';
+
+import 'lite-youtube-embed/src/lite-yt-embed.css'
 ---
 
 <BaseLayout>
-
+  <script hoist type="module">
+    import 'lite-youtube-embed/src/lite-yt-embed.js';
+  </script>
+  <style>
+    lite-youtube {
+      max-width: 100% !important;
+    }
+    lite-youtube::before {
+      display: none;
+    }
+    lite-youtube::after {
+      display: none;
+    }
+  </style>
   <div class="h-full w-full relative">
     <Particles />
     <div class="text-center pt-12">
@@ -17,36 +31,29 @@ import Particles from '../components/Particles.astro';
       <div class="text-center hero-content flex flex-col">
         <div class="mx-10 my-10 lg:w-full lg:h-auto z-20 max-w-5xl">
           <h2 class="text-accent font-bold text-4xl lg:text-4xl">
-            Découvrez ici même le clip "Nous Y sommes" de la zzccmxtp
+            Découvrez ici même le clip "Nous Y sommes" de la zzccmxtp ou écoute sur <a class="link" href="https://fanlink.to/NousYsommes" target="_blank">ton réseau musical préféré</a>
           </h2>
           <br>
           <div class="aspect-w-16 aspect-h-9 mx-auto ring-1 ring-accent ring-offset-2 ring-offset-accent-focus">
-            <iframe
-              src="https://www.youtube.com/embed/o5u0iyr8DT4" 
-              title="YouTube video player" 
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen
+            <lite-youtube
+              videoid="o5u0iyr8DT4"
             >
-            </iframe>
+            <!-- Bug fix, astro add undefined if nothing is defined inside an HTML Component -->
+            </lite-youtube>
           </div>
           <br>
           <h2 class="text-accent font-bold text-4xl lg:text-4xl">
-            Sinon tu peux aussi mater la tracklist 
+            Sinon tu peux aussi mater la tracklist
           </h2>
           <br>
           <div class="aspect-w-16 aspect-h-9 mx-auto ring-1 ring-accent ring-offset-2 ring-offset-accent-focus">
-            <iframe
-              src="https://www.youtube.com/embed/1sMQVpSQBks"
-              title="YouTube video player" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen
+            <lite-youtube
+              videoid="1sMQVpSQBks"
             >
-            </iframe>
+            <!-- Bug fix, astro add undefined if nothing is defined inside an HTML Component -->
+            </lite-youtube>
           </div>
         </div>
-  
       </div>
     </div>
   </div>
