@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/Base.astro';
+import FAQCollapse from '../components/FAQ/Collapse.astro';
+import Particles from '../components/Particles.astro';
+
+import 'lite-youtube-embed/src/lite-yt-embed.css'
+---
+
+<BaseLayout>
+  <div class="h-full w-full relative">
+    <Particles />
+    <div class="text-center pt-16 pb-10">
+      <h1 class="text-accent font-bold text-5xl lg:text-7xl">La FAQ</h1>
+      <h5 class="text-xs font-light">spécial ZZCCMXTP</h5>
+    </div>
+  </div>
+
+  <div class="hero z-20">
+    <div class="hero-content text-center">
+      <p class="my-2 mx-5 text-lg">
+        Vous etes surmen nombreux z'a vous dire au fond de vous : "c quoi la zzccmxpt ?", "frr c koi ca mdr", "g pa la ref mais ok 👍", voir meme "ca pu ton truc mdr c koi ce blaze"
+        et finalement poser la question "c quoi" (feur) vous effrai au plus profond de votr ame... ne vous inquietez pas, graçe a cette foir o question la question sera vitre répondu !
+      </p>
+    </div>
+  </div>
+  <br>
+  <div class="mx-auto max-w-3xl">
+    <FAQCollapse />
+  </div>
+</BaseLayout>
