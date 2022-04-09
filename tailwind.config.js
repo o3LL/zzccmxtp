@@ -21,6 +21,7 @@ module.exports = {
 					"accent-focus": "#009830",
 					primary: "#00e849",
 					"primary-focus": "#00e849",
+					"primary-content": "rgb(48, 48, 48)",
 					"base-100": "#272a30"
 				},
 				light: {
@@ -29,6 +30,7 @@ module.exports = {
 					"accent-focus": "#6f00b0",
 					primary: "#a60dff",
 					"primary-focus": "#a60dff",
+					"primary-content": "rgb(235, 236, 240)",
 					// "base-100": "#272a30"
 				},
 			},
