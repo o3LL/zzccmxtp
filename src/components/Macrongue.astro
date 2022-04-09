@@ -49,13 +49,13 @@ const timeout = Math.floor(
 
 setTimeout(() => {
   const macrongue = document.getElementById('macrongue');
-  macrongue.classList.remove('translate-y-full');
+  macrongue.parentNode.classList.remove('translate-y-full');
 }, timeout);
 </script>
 
 <div>
-  <div class="fixed bottom-0 left-0 z-50">
-    <div id="macrongue" class="transition-transform ease-out duration-300 translate-y-full" onclick="killMacrongue(event)">
+  <div class="fixed bottom-0 left-0 z-50 translate-y-full">
+    <div id="macrongue" class="transition-transform ease-out duration-300" onclick="killMacrongue(event)">
       <img width="300px" height="300px" src={MacrongueImage} alt="Le méchan macerongue">
     </div>
   </div>
