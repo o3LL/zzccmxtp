@@ -1,7 +1,7 @@
 ---
 const {titre, type, url, thumbnail} = Astro.props;
 ---
-<script hoist>
+<script>
 function playSound(event) {
   event.currentTarget.getElementsByTagName('audio')[0].play();
 }

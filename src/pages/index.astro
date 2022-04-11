@@ -1,13 +1,13 @@
 ---
 import BaseLayout from '../layouts/Base.astro';
 import Audio from '../components/Player/Audio.astro';
-import Particles from '../components/Particles.astro';
+import Particles from '../components/Particles/Particles.svelte';
 
 import 'lite-youtube-embed/src/lite-yt-embed.css'
 ---
 
 <BaseLayout>
-  <script hoist type="module">
+  <script>
     import 'lite-youtube-embed/src/lite-yt-embed.js';
   </script>
   <style>
@@ -22,7 +22,7 @@ import 'lite-youtube-embed/src/lite-yt-embed.css'
     }
   </style>
   <div class="h-full w-full relative">
-    <Particles />
+    <Particles client:only="svelte"/>
     <div class="text-center pt-16">
       <h1 class="text-accent font-bold text-5xl lg:text-7xl">ZZCCMXTP</h1>
       <h5 class="text-xs font-light">Le site pas officiel du tout</h5>
