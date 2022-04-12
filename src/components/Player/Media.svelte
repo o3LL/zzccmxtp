@@ -28,6 +28,7 @@ function handlePlay(event, isSound) {
     <h2 class="card-title">{title}</h2>
     <figure>
       <audio
+        onclick="event.stopPropagation();"
         controls
         preload="none"
         volume="0.75"
