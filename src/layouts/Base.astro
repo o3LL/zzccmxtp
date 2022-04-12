@@ -1,5 +1,5 @@
 ---
-import Macrongue from '../components/Macrongue.astro';
+import Macrongue from '../components/Macrongue.svelte';
 ---
 <html lang="fr">
   <head>
@@ -19,7 +19,7 @@ import Macrongue from '../components/Macrongue.astro';
     <meta property="og:locale" content="fr_FR" />
   </head>
   <body>
-    <Macrongue />
+    <Macrongue client:only/>
 
     <nav class="navbar bg-transparent items-center absolute z-40">
       <div class="w-100 mx-auto">
