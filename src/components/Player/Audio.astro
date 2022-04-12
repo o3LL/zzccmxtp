@@ -1,5 +1,25 @@
 ---
-import Media from './Media.astro';
+import Media from './Media.svelte';
+
+const sounds = [
+  { title: "3 Freres Topline", url: "/audio/3freres_topline" },
+  { title: "Bagarre Legende ZZCC", url: "/audio/bagarre_legende_zzcc" },
+  { title: "Balade de panpan", url: "/audio/balade_de_panpan" },
+  { title: "Jazz", url: "/audio/JAZZ_32" },
+  { title: "Squeezie - Donde esta la biblioteca", url: "/audio/LV2_53" },
+  { title: "N64KIDDO - WE ALL FALL DOWN", url: "/audio/N64KIDDO_-_WE_ALL_FALL_DOWN" },
+  { title: "TwitterLand", url: "/audio/TwitterLand" },
+  { title: "Cacabox - All Night Extreme", url: "/audio/cacabox_all_night_extreme" },
+  { title: "GRANDJD Voix (g reverse le son)", url: "/audio/grandjd-voix-rereverse" },
+  { title: "Interlude Clash", url: "/audio/interlude_clash" },
+  { title: "Le Rap de Krono", url: "/audio/le_rap_de_krono" },
+  { title: "Musique Foret", url: "/audio/musique_foret" },
+  { title: "Pandrezz - 4basses (142BPM)", url: "/audio/pandrezz_-_4basses_142BPM" },
+  { title: "Pandrezz x sadtoi - Plasticine", url: "/audio/pandrezz_x_sadtoi_-_Plasticine" },
+  { title: "PipoLapi", url: "/audio/pipolapi" },
+  { title: "PPManga", url: "/audio/ppmanga" },
+  { title: "Smokin drogz", url: "/audio/smokin-drogz-_1_" },
+];
 ---
 
 <div class="mx-auto w-full lg:w-1/2 text-center hidden lg:block">
@@ -21,21 +41,7 @@ import Media from './Media.astro';
 </div>
 
 <div class="flex items-center flex-wrap gap-4 justify-center mt-4 mb-8">
-  <Media titre="3 Freres Topline" url="/audio/3freres_topline" ></Media>
-  <Media titre="Bagarre Legende ZZCC" url="/audio/bagarre_legende_zzcc" ></Media>
-  <Media titre="Balade de panpan" url="/audio/balade_de_panpan" ></Media>
-  <Media titre="Jazz" url="/audio/JAZZ_32" ></Media>
-  <Media titre="Squeezie - Donde esta la biblioteca" url="/audio/LV2_53" ></Media>
-  <Media titre="N64KIDDO - WE ALL FALL DOWN" url="/audio/N64KIDDO_-_WE_ALL_FALL_DOWN" ></Media>
-  <Media titre="TwitterLand"  url="/audio/TwitterLand" ></Media>
-  <Media titre="Cacabox - All Night Extreme" url="/audio/cacabox_all_night_extreme" ></Media>
-  <Media titre="GRANDJD Voix (g reverse le son)" url="/audio/grandjd-voix-rereverse" ></Media>
-  <Media titre="Interlude Clash" url="/audio/interlude_clash" ></Media>
-  <Media titre="Le Rap de Krono" url="/audio/le_rap_de_krono" ></Media>
-  <Media titre="Musique Foret" url="/audio/musique_foret" ></Media>
-  <Media titre="Pandrezz - 4basses (142BPM)" url="/audio/pandrezz_-_4basses_142BPM" ></Media>
-  <Media titre="Pandrezz x sadtoi - Plasticine" url="/audio/pandrezz_x_sadtoi_-_Plasticine" ></Media>
-  <Media titre="PipoLapi" url="/audio/pipolapi"></Media>
-  <Media titre="PPManga" url="/audio/ppmanga"></Media>
-  <Media titre="Smokin drogz" url="/audio/smokin-drogz-_1_"></Media>
+  {sounds.map((sound) => 
+    <Media {...sound} client:only></Media>
+  )}
 </div>

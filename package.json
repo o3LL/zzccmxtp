@@ -9,18 +9,18 @@
     "preview": "astro preview"
   },
   "devDependencies": {
+    "@astrojs/svelte": "^0.1.1",
+    "@astrojs/tailwind": "^0.1.2",
     "@tailwindcss/aspect-ratio": "^0.4.0",
-    "astro": "^0.23.3",
+    "astro": "^0.26.0",
     "autoprefixer": "^10.4.0",
+    "sass": "^1.50.0",
+    "svelte": "^3.47.0",
     "tailwindcss": "^3.0.23"
   },
   "dependencies": {
-    "@astrojs/renderer-react": "^0.5.0",
     "daisyui": "^2.2.2",
-    "date-fns": "^2.28.0",
     "lite-youtube-embed": "^0.2.0",
-    "node-cache": "^5.1.2",
-    "react-player": "^2.9.0",
-    "twitter-api-v2": "^1.10.0"
+    "svelte-particles": "^1.43.1"
   }
 }

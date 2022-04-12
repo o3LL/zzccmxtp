@@ -1,0 +1,68 @@
+<script>
+export let title;
+export let url;
+
+function playSound(event) {
+  event.currentTarget.getElementsByTagName('audio')[0].play();
+}
+
+function handlePause(event) {
+  // c'est degeu lol
+  event.target.parentNode.parentNode.parentNode.classList.remove('ring-1', 'playing')
+}
+
+function handlePlay(event, isSound) {
+  event.target.parentNode.parentNode.parentNode.classList.add('ring-1', 'playing')
+
+  const media = document.body.querySelectorAll('audio')
+  for (var i = 0; i < media.length; i++) {
+    if(media[i] !== event.target) {
+      media[i].pause();
+    }
+  };
+}
+</script>
+
+<div class="card w-96 bg-base-200 shadow-xl ring-accent overflow-visible" on:click={(event) => playSound(event)}>
+  <div class="card-body">
+    <h2 class="card-title">{title}</h2>
+    <figure>
+      <audio
+        controls
+        preload="none"
+        volume="0.75"
+        on:play={(event) => handlePlay(event)}
+        on:pause={(event) => handlePause(event)}
+      >
+        <source src={`${url}.mp3`} type="audio/mpeg">
+        <source src={`${url}.ogg`} type="audio/ogg">
+      </audio>
+    <a class="tooltip tooltip-primary ml-2 justify-end z-10" href={`${url}.mp3`} download data-tip={`Télécharger ${title}`} onclick="event.stopPropagation();">
+      <button class="btn btn-square btn-outline">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+      </button>
+    </a>
+    </figure>
+
+  </div>
+</div>
+
+<style>
+@keyframes pulse-ring {
+  0%,
+  50%,
+  100% {box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);}
+  25%,
+  75% {box-shadow: var(--tw-shadow, 0 0 #0000), var(--tw-ring-shadow),;}
+}
+
+.playing {
+  animation-name: pulse-ring;
+  animation-duration: 2.30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+</style>
+

@@ -1,0 +1,14 @@
+---
+const {title, videoUrl, gifUrl} = Astro.props;
+---
+
+<section>
+  <h3>{title}</h3>
+  <video src={videoUrl}></video>
+  <a href={videoUrl} download>
+    <button>Télécharger en MP4</button>
+  </a>
+  <a href={gifUrl} download>
+    <button>Télécharger en GIF</button>
+  </a>
+</section>
