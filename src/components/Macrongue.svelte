@@ -34,7 +34,7 @@
 
   setTimeout(() => {
     isHidden = false;
-  }, 100);
+  }, timeout);
 </script>
 
 <div>
