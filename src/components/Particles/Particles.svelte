@@ -1,19 +1,12 @@
 <script>
-  import { onMount } from "svelte";
-  import { loadFull } from "tsparticles";
+  import Particles from "svelte-particles";
+  import { tsParticles } from "tsparticles";
 
   import configPoo from './configPoo.json';
   import configZz from './configZz.json';
 
-  let ParticlesComponent;
-  let visible = false;
-  onMount(async () => {
-    const module = await import("svelte-particles");
-
-    ParticlesComponent = module.default;
-    visible = true;
-  });
-
+  tsParticles.load("tsparticlesPoo", configPoo)
+  tsParticles.load("tsparticlesZz", configZz)
   let onParticlesLoaded = (event) => {
     const particlesContainer = event.detail.particles;
     console.log(event)
@@ -27,26 +20,22 @@
     // you can use main to customize the tsParticles instance adding presets or custom shapes
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
     // starting from v2 you can add only the features you need reducing the bundle size
-    await loadFull(main);
+    await tsParticles.load("tsparticlesPoo", main);
   };
 </script>
 
-{#if visible}
-<svelte:component
-  this="{ParticlesComponent}"
-  class="absolute top-0 bottom-0 left-0 right-0 h-full w-full z-0"
-  id="tsparticles"
-  options="{configPoo}"
-  on:particlesLoaded="{onParticlesLoaded}"
-  particlesInit="{onParticlesInit}"
-/>
-yo
-<svelte:component
-  this="{ParticlesComponent}"
-  class="absolute top-0 bottom-0 left-0 right-0 h-full w-full z-0"
-  id="tsparticles"
-  options="{configZz}"
-  on:particlesLoaded="{onParticlesLoaded}"
-  particlesInit="{onParticlesInit}"
-/>
-{/if}
+<div class="absolute top-0 bottom-0 left-0 right-0 h-full w-full -z-10">
+  <Particles
+    id="tsparticlesPoo"
+    options="{configPoo}"
+    on:particlesLoaded="{onParticlesLoaded}"
+    particlesInit="{onParticlesInit}"
+  />
+
+  <Particles
+    id="tsparticlesZz"
+    options="{configZz}"
+    on:particlesLoaded="{onParticlesLoaded}"
+    particlesInit="{onParticlesInit}"
+  />
+</div>

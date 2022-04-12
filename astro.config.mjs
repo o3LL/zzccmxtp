@@ -1,11 +1,13 @@
 import { defineConfig } from 'astro/config';
 import svelte from "@astrojs/svelte";
+import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
   // your configuration options here...
-  server: {
+	site: 'https://zzccmxtp.fr/',
+	server: {
     host: '0.0.0.0'
   },
-  integrations: [svelte()]
+  integrations: [svelte(), tailwind()]
 });
