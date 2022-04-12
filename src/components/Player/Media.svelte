@@ -2,17 +2,19 @@
 export let title;
 export let url;
 
+const cardStyle = "card w-96 bg-base-200 shadow-xl ring-accent overflow-visible";
+let isPlaying = false;
+
 function playSound(event) {
   event.currentTarget.getElementsByTagName('audio')[0].play();
 }
 
 function handlePause(event) {
-  // c'est degeu lol
-  event.target.parentNode.parentNode.parentNode.classList.remove('ring-1', 'playing')
+  isPlaying = false;
 }
 
 function handlePlay(event, isSound) {
-  event.target.parentNode.parentNode.parentNode.classList.add('ring-1', 'playing')
+  isPlaying = true;
 
   const media = document.body.querySelectorAll('audio')
   for (var i = 0; i < media.length; i++) {
@@ -23,10 +25,10 @@ function handlePlay(event, isSound) {
 }
 </script>
 
-<div class="card w-96 bg-base-200 shadow-xl ring-accent overflow-visible" on:click={(event) => playSound(event)}>
+<div class={isPlaying ? cardStyle + ' ring-1 playing' : cardStyle} on:click={(event) => playSound(event)}>
   <div class="card-body">
-    <h2 class="card-title">{title}</h2>
-    <figure>
+    <h2 class="card-title h-8">{title}</h2>
+    <figure class="mt-1">
       <audio
         onclick="event.stopPropagation();"
         controls
@@ -46,7 +48,7 @@ function handlePlay(event, isSound) {
       </button>
     </a>
     </figure>
-
+    <slot/>
   </div>
 </div>
 
