@@ -2,12 +2,14 @@ import { defineConfig } from 'astro/config';
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
 
+import sitemap from "@astrojs/sitemap";
+
 // https://astro.build/config
 export default defineConfig({
   // your configuration options here...
-	site: 'https://zzccmxtp.fr/',
-	server: {
+  site: 'https://zzccmxtp.fr',
+  server: {
     host: '0.0.0.0'
   },
-  integrations: [svelte(), tailwind()]
+  integrations: [svelte(), tailwind(), sitemap()]
 });
