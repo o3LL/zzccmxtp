@@ -2,25 +2,9 @@
 import BaseLayout from '../layouts/Base.astro';
 import Audio from '../components/Player/Audio.astro';
 import Particles from '../components/Particles/Particles.svelte';
-
-import 'lite-youtube-embed/src/lite-yt-embed.css'
 ---
 
 <BaseLayout>
-  <script>
-    import 'lite-youtube-embed/src/lite-yt-embed.js';
-  </script>
-  <style>
-    lite-youtube {
-      max-width: 100% !important;
-    }
-    lite-youtube::before {
-      display: none;
-    }
-    lite-youtube::after {
-      display: none;
-    }
-  </style>
   <div class="h-full w-full relative">
     <Particles client:only="svelte" />
     <div class="text-center pt-16">

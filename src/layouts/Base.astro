@@ -1,5 +1,6 @@
 ---
 import Macrongue from '../components/Macrongue.svelte';
+import 'lite-youtube-embed/src/lite-yt-embed.css';
 ---
 <html lang="fr">
   <head>
@@ -10,16 +11,31 @@ import Macrongue from '../components/Macrongue.svelte';
 
     <!-- La base -->
     <title>Zzccmxtp - Le site non-officiel (pour l'instant) 💩</title>
-    <link rel="icon" type="image/webp" href="poo.webp">
+    <link rel="icon" type="image/webp" href="/poo.webp">
 
     <!-- Le gros SEO des familles -->
     <meta property="og:title" content="Zzccmxtp" />
     <meta property="og:site_name" content="Zzccmxtp" />
     <meta property="og:description" content="Le site non-officiel de la zzccmxtp." />
     <meta property="og:locale" content="fr_FR" />
+    <style is:global>
+      lite-youtube {
+        max-width: 100% !important;
+      }
+      lite-youtube::before {
+        display: none;
+      }
+      lite-youtube::after {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <Macrongue client:only/>
+
+    <script>
+      import 'lite-youtube-embed/src/lite-yt-embed.js';
+    </script>
 
     <nav class="navbar bg-transparent items-center absolute z-40">
       <div class="w-100 mx-auto">
