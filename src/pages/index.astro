@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/Base.astro';
 import Audio from '../components/Player/Audio.astro';
 import Particles from '../components/Particles/Particles.svelte';
+import CountDown from '../components/CountDown.svelte';
 ---
 
 <BaseLayout>
@@ -11,44 +12,75 @@ import Particles from '../components/Particles/Particles.svelte';
       <h1 class="text-accent font-bold text-5xl lg:text-7xl">ZZCCMXTP</h1>
       <h5 class="text-xs font-light">Le site pas officiel du tout</h5>
     </div>
+
     <div class="hero z-20">
-      <div class="text-center hero-content flex flex-col">
-        <div class="mx-10 my-10 lg:w-full lg:h-auto z-20 max-w-5xl">
-          <h2 class="text-accent font-bold text-4xl lg:text-4xl">
-            Oh hhé ya le clip "Adieu Les filles" avec Squeezie qui est sortie tu peux mater le clip (monté par ronare) <a class="link" href="https://squeezie.s-ib.link/AdieuLesFilles" target="_blank">ou lécouter partout</a>
-          </h2>
-          <br>
-          <br>
-          <div class="aspect-w-16 aspect-h-9 mx-auto ring-1 ring-accent ring-offset-2 ring-offset-accent-focus">
-            <lite-youtube
-              videoid="BTOVgWjUoDo"
-            >
-            <!-- Bug fix, astro add undefined if nothing is defined inside an HTML Component -->
-            </lite-youtube>
+      <div class="text-center hero-content">
+        <CountDown client:only="svelte" end="2022-06-17T00:00:00.000+02:00" />
+      </div>
+    </div>
+
+    <div class="hero z-20">
+      <div class="text-center hero-content">
+        <div class="my-10 z-20 max-w-5xl flex flex-wrap lg:-mx-8 items-end">
+          <div class="my-8 px-2 lg:w-1/2 min-h-fit">
+            <h2 class="text-accent font-bold text-4xl lg:text-4xl">
+              c eu les daft punk finalement <a class="link" href="https://bfan.link/nous-sommes-les-daft-punk" target="_blank">ici aussi ils sont daft punk</a>
+            </h2>
+            <br>
+            <br>
+            <div class="aspect-w-16 aspect-h-9 ring-1 ring-accent ring-offset-2 ring-offset-accent-focus">
+              <lite-youtube
+                videoid="LcsnE9h0u4U"
+              >
+              <!-- Bug fix, astro add undefined if nothing is defined inside an HTML Component -->
+              </lite-youtube>
+            </div>
           </div>
           <br>
-          <h2 class="text-accent font-bold text-4xl lg:text-4xl">
-            Découvrez aussi ici même le clip "Nous Y sommes" de la zzccmxtp ou écoute sur <a class="link" href="https://fanlink.to/NousYsommes" target="_blank">ton réseau musical préféré</a>
-          </h2>
-          <br>
-          <div class="aspect-w-16 aspect-h-9 mx-auto ring-1 ring-accent ring-offset-2 ring-offset-accent-focus">
-            <lite-youtube
-              videoid="o5u0iyr8DT4"
-            >
-            <!-- Bug fix, astro add undefined if nothing is defined inside an HTML Component -->
-            </lite-youtube>
+
+          <div class="my-8 px-2 lg:w-1/2 justify-content-bottom">
+            <h2 class="text-accent font-bold text-4xl lg:text-4xl">
+              Oh hhé ya le clip "Adieu Les filles" avec Squeezie qui est sortie tu peux mater le clip (monté par ronare) <a class="link" href="https://squeezie.s-ib.link/AdieuLesFilles" target="_blank">ou lécouter partout</a>
+            </h2>
+            <br>
+            <br>
+            <div class="aspect-w-16 aspect-h-9 ring-1 ring-accent ring-offset-2 ring-offset-accent-focus">
+              <lite-youtube
+                videoid="BTOVgWjUoDo"
+              >
+              <!-- Bug fix, astro add undefined if nothing is defined inside an HTML Component -->
+              </lite-youtube>
+            </div>
           </div>
           <br>
-          <h2 class="text-accent font-bold text-4xl lg:text-4xl">
-            Sinon tu peux aussi mater la tracklist legendaire de la zzccmxtp
-          </h2>
+
+          <div class="my-8 px-2 lg:w-1/2 min-h-fit">
+            <h2 class="text-accent font-bold text-4xl lg:text-4xl">
+              Découvrez aussi ici même le clip "Nous Y sommes" de la zzccmxtp ou écoute sur <a class="link" href="https://fanlink.to/NousYsommes" target="_blank">ton réseau musical préféré</a>
+            </h2>
+            <br>
+            <div class="aspect-w-16 aspect-h-9 ring-1 ring-accent ring-offset-2 ring-offset-accent-focus">
+              <lite-youtube
+                videoid="o5u0iyr8DT4"
+              >
+              <!-- Bug fix, astro add undefined if nothing is defined inside an HTML Component -->
+              </lite-youtube>
+            </div>
+          </div>
           <br>
-          <div class="aspect-w-16 aspect-h-9 mx-auto ring-1 ring-accent ring-offset-2 ring-offset-accent-focus">
-            <lite-youtube
-              videoid="1sMQVpSQBks"
-            >
-            <!-- Bug fix, astro add undefined if nothing is defined inside an HTML Component -->
-            </lite-youtube>
+
+          <div class="my-8 px-2 lg:w-1/2 min-h-fit">
+            <h2 class="text-accent font-bold text-4xl lg:text-4xl">
+              Sinon tu peux aussi mater la tracklist legendaire de la zzccmxtp
+            </h2>
+            <br>
+            <div class="aspect-w-16 aspect-h-9 ring-1 ring-accent ring-offset-2 ring-offset-accent-focus">
+              <lite-youtube
+                videoid="1sMQVpSQBks"
+              >
+              <!-- Bug fix, astro add undefined if nothing is defined inside an HTML Component -->
+              </lite-youtube>
+            </div>
           </div>
         </div>
       </div>
