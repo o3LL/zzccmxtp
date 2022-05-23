@@ -24,6 +24,11 @@
     }, 2000)
   }
 
+  function closeModal() {
+    const modalInput = document.getElementById('modal-winner');
+    modalInput.checked = false;
+  }
+
   const timeout = Math.floor(
     Math.random() // 1.0 to 2.0
     * 10000 // 1 to 20sec
@@ -52,7 +57,7 @@
     <img width="100%" height="100%" src="/lequip.webp" alt="">
 
     <div class="modal-action flex mt-4 items-center justify-center">
-      <a target="_blank" href="https://twitter.com/intent/tweet?related=alpr4zz&text=Superbre%20j%27ai%20vaincu%20le%20mechan%20macrongue%20sur%20le%20site%20internert%20vraiment%20pas%20officielle%20de%20la%20%23zzccmxtp%20!%20C%20comme%20un%20mini%20jeu%20video%20en%20moin%20bien%20que%20le%20vrai%20jeu%20zzcc%20enfaitre&url=https%3A%2F%2Fzzccmxtp.fr%2F">
+      <a on:click={() => closeModal()} target="_blank" href="https://twitter.com/intent/tweet?related=alpr4zz&text=Superbre%20j%27ai%20vaincu%20le%20mechan%20macrongue%20sur%20le%20site%20internert%20vraiment%20pas%20officielle%20de%20la%20%23zzccmxtp%20!%20C%20comme%20un%20mini%20jeu%20video%20en%20moin%20bien%20que%20le%20vrai%20jeu%20zzcc%20enfaitre&url=https%3A%2F%2Fzzccmxtp.fr%2F">
         <div class="btn btn-sm rounded-full bg-[#1da1f2] text-white normal-case items-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="h-4 w-4 mr-2 fill-current">
             <path
