@@ -37,11 +37,16 @@ import 'lite-youtube-embed/src/lite-yt-embed.css';
       import 'lite-youtube-embed/src/lite-yt-embed.js';
     </script>
 
-    <nav class="navbar bg-transparent items-center absolute z-40">
+    <nav class="navbar bg-transparent items-center absolute z-40 max-h-12">
       <div class="w-100 mx-auto">
         <ul class="menu menu-horizontal p-0 text-xl font-light text-accent">
           <li><a href="/">Acceuil</a></li>
-          <li><a href="/ost">ZZCC La Legendre™ OST</a></li>
+          <li>
+            <a href="/ost" class="flex flex-col justify-center gap-0">
+              <p class="text-xs">ZZCC La Legendre™</p>
+              <p>OST</p>
+            </a>
+          </li>
           <li><a href="/about">FAQ</a></li>
         </ul>
       </div>
