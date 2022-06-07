@@ -1,6 +1,11 @@
 <script>
+import { createEventDispatcher } from 'svelte';
+const dispatch = createEventDispatcher();
+
 export let title;
 export let url;
+export let volume;
+$: computedVolume = volume / 100;
 
 const cardStyle = "card w-96 bg-base-200 shadow-xl ring-accent overflow-visible";
 let isPlaying = false;
@@ -33,9 +38,10 @@ function handlePlay(event, isSound) {
         onclick="event.stopPropagation();"
         controls
         preload="none"
-        volume="0.75"
+        bind:volume={computedVolume}
         on:play={(event) => handlePlay(event)}
         on:pause={(event) => handlePause(event)}
+        on:volumechange={() => dispatch('volumechanged', computedVolume * 100)}
       >
         <source src={`${url}.mp3`} type="audio/mpeg">
         <source src={`${url}.ogg`} type="audio/ogg">
