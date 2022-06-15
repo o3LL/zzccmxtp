@@ -59,19 +59,5 @@ function handlePlay(event, isSound) {
 </div>
 
 <style>
-@keyframes pulse-ring {
-  0%,
-  50%,
-  100% {box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);}
-  25%,
-  75% {box-shadow: var(--tw-shadow, 0 0 #0000), var(--tw-ring-shadow),;}
-}
-
-.playing {
-  animation-name: pulse-ring;
-  animation-duration: 2.30s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in;
-}
 </style>
 

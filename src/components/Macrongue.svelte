@@ -73,25 +73,4 @@
 </div>
 
 <style>
-@keyframes shake {
-  from {transform: translate(2px, 1px) rotate(0deg) scale(1) ;}
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(0px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(2px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(2px, 2px) rotate(0deg); }
-  to { transform: translate(-222px, -1522px) scale(5) rotate(30deg); }
-
-}
-.shake {
-  animation-name: shake;
-  animation-duration: 2s;
-  transform-origin:50% 50%;
-  animation-iteration-count: 1;
-}
-
 </style>
