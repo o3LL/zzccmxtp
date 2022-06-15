@@ -39,7 +39,7 @@ import 'lite-youtube-embed/src/lite-yt-embed.css';
 
     <nav class="navbar bg-transparent items-center absolute z-40 max-h-12">
       <div class="w-100 mx-auto">
-        <ul class="menu menu-horizontal p-0 text-xl font-light text-accent">
+        <ul class="menu menu-horizontal p-0 text-xl text-accent font-bold">
           <li><a href="/">Acceuil</a></li>
           <li>
             <a href="/ost" class="flex flex-col justify-center gap-0">
@@ -47,15 +47,22 @@ import 'lite-youtube-embed/src/lite-yt-embed.css';
               <p>OST</p>
             </a>
           </li>
+          <li>
+            <a href="/leak" class="glitch" style="--stacks: 3;">
+              <span style="--index: 0;">Leaks</span>
+              <span style="--index: 1;">Leaks</span>
+              <span style="--index: 2;">Leaks</span>
+            </a>
+          </li>
           <li><a href="/about">FAQ</a></li>
         </ul>
       </div>
 
-      <div class="absolute right-0 mr-2">
+      <div class="relative md:absolute mt-5 right-0">
         <div class="form-control">
           <label class="label flex-col cursor-pointer">
             <input type="checkbox" class="toggle" id="themeToggle">
-            <span class="label-text mr-2 text-base-content text-tiny">mode bresom</span>
+            <span class="label-text mr-2 text-base-content text-tiny md:visible invisible">mode bresom</span>
           </label>
         </div>
       </div>
@@ -111,3 +118,56 @@ import 'lite-youtube-embed/src/lite-yt-embed.css';
     </footer>
   </body>
 </html>
+
+<style>
+.glitch {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.glitch span {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  font-size: 1rem;
+  --stack-height: calc(100% / var(--stacks) - 1px);
+  --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
+  --clip-top: calc(var(--stack-height) * var(--index));
+  --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+  clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+  animation: stack 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 2s alternate-reverse;
+}
+
+.glitch span:nth-child(odd) { --glitch-translate: 8px; }
+.glitch span:nth-child(even) { --glitch-translate: -8px; }
+
+@keyframes stack {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+  };
+  60% {
+    opacity: 0.5;
+    transform: translateX(50%);
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+    transform: translate(var(--glitch-translate));
+  }
+  2% {
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  4%, 100% {  text-shadow: none; transform: none; }
+}
+</style>

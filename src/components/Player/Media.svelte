@@ -32,7 +32,7 @@ function handlePlay(event, isSound) {
 
 <div class={isPlaying ? cardStyle + ' ring-1 playing' : cardStyle} on:click={(event) => playSound(event)}>
   <div class="card-body">
-    <h2 class="card-title h-8">{title}</h2>
+    <h2 class="card-title h-8 mb-2">{title}</h2>
     <figure class="mt-1">
       <audio
         onclick="event.stopPropagation();"

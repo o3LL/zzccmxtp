@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/Base.astro';
+import Leak from '../components/Leak.astro';
+import Particles from '../components/Particles/Particles.svelte';
+---
+
+<BaseLayout>
+  <Particles client:only="svelte" />
+  <div class="h-full w-full relative pt-16">
+    <Leak />
+  </div>
+</BaseLayout>
