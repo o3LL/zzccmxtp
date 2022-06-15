@@ -63,13 +63,13 @@
       url: "/audio/leaks/J'ai_rien_a_leur_dire",
     },
     { title: "?. Panpan", url: "/audio/leaks/Panpan-construct" },
-    { title: "?. Un peu de cash", url: "/audio/leaks/Un_peu_de_cash" },
+    { title: "?. JRPG (Ft. Baek, Epektase & LE GRAND JD)", url: "/audio/leaks/JRPG" },
     { title: "?. Jc pas", url: "/audio/leaks/Jc_pas" },
     { title: "?. Interlude Deums", url: "/audio/leaks/Interlude_Deums" },
     { title: "?. Connais po", url: "/audio/leaks/Connais_tjr_pas" },
   ];
 
-  let volume = 75;
+  let volume = 69;
 </script>
 
 <div class="mx-auto w-full lg:w-1/2 text-center hidden lg:block">
