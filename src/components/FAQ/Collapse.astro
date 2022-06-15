@@ -1,24 +1,24 @@
 ---
-import content from  './content.json'
+import content from './content.json'
 ---
 
 {
-  content.map((field) =>
-    <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base rounded-box mb-1">
-      <input type="checkbox" class="peer">
-      <div class="collapse-title text-center text-xl bg-base-200 text-accent">
-          {field.question}
-      </div>
-      <div class="collapse-content text-center text-base bg-base-200 peer-checked:text-base-content">
-          <p set:html={field.answer}></p>
-          {
-            field.media && field.media['yt-video'] &&
-            <br>
-            <lite-youtube videoid={field.media['yt-video']}>
-              <!-- Bug fix, astro add undefined if nothing is defined inside an HTML Component -->
-            </lite-youtube>
-          }
-      </div>
-    </div>
-  )
+content.map((field) =>
+<div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base rounded-box mb-1">
+  <input type="checkbox" class="peer">
+  <div class="collapse-title text-center text-xl bg-base-200 text-accent">
+    {field.question}
+  </div>
+  <div class="collapse-content text-center text-base bg-base-200 peer-checked:text-base-content">
+    <p set:html={field.answer}></p>
+    {
+    field.media && field.media['yt-video'] &&
+    <br>
+    <lite-youtube videoid={field.media['yt-video']}>
+      <!-- Bug fix, astro add undefined if nothing is defined inside an HTML Component -->
+    </lite-youtube>
+    }
+  </div>
+</div>
+)
 }
