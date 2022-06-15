@@ -1,4 +1,4 @@
-import type { RecursivePartial, IOptions } from 'tsparticles';
+import type { RecursivePartial, IOptions } from "tsparticles";
 
 const config: RecursivePartial<IOptions> = {
   fullScreen: {
@@ -45,7 +45,7 @@ const config: RecursivePartial<IOptions> = {
     },
     move: {
       enable: true,
-      speed: { min: 0.1, max: 4},
+      speed: { min: 0.1, max: 4 },
       direction: "none",
       random: true,
       straight: false,
@@ -66,7 +66,7 @@ const config: RecursivePartial<IOptions> = {
         mode: "repulse",
       },
       onclick: {
-        mode: 'push',
+        mode: "push",
         enable: true,
       },
       resize: true,
@@ -75,11 +75,11 @@ const config: RecursivePartial<IOptions> = {
       repulse: {
         distance: 60,
         duration: 0.1,
-        speed: 1
+        speed: 1,
       },
       push: {
-        quantity: 2
-      }
+        quantity: 2,
+      },
     },
   },
   fpsLimit: 120,

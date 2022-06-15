@@ -1,6 +1,6 @@
 <script>
   import Particles from "svelte-particles";
-  import config from './config';
+  import config from "./config";
 
   let onParticlesLoaded = (event) => {
     const particlesContainer = event.detail.particles;
@@ -19,8 +19,8 @@
 <div class="absolute top-0 bottom-0 left-0 right-0 h-full w-full -z-10">
   <Particles
     id="tsparticles"
-    options="{config}"
-    on:particlesLoaded="{onParticlesLoaded}"
-    on:particlesInit="{onParticlesInit}"
-  ></Particles>
+    options={config}
+    on:particlesLoaded={onParticlesLoaded}
+    on:particlesInit={onParticlesInit}
+  />
 </div>

@@ -1,36 +1,40 @@
 <script>
-import { createEventDispatcher } from 'svelte';
-const dispatch = createEventDispatcher();
+  import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher();
 
-export let title;
-export let url;
-export let volume;
-$: computedVolume = volume / 100;
+  export let title;
+  export let url;
+  export let volume;
+  $: computedVolume = volume / 100;
 
-const cardStyle = "card w-96 bg-base-200 shadow-xl ring-accent overflow-visible";
-let isPlaying = false;
+  const cardStyle =
+    "card w-96 bg-base-200 shadow-xl ring-accent overflow-visible";
+  let isPlaying = false;
 
-function playSound(event) {
-  event.currentTarget.getElementsByTagName('audio')[0].play();
-}
+  function playSound(event) {
+    event.currentTarget.getElementsByTagName("audio")[0].play();
+  }
 
-function handlePause(event) {
-  isPlaying = false;
-}
+  function handlePause(event) {
+    isPlaying = false;
+  }
 
-function handlePlay(event, isSound) {
-  isPlaying = true;
+  function handlePlay(event, isSound) {
+    isPlaying = true;
 
-  const media = document.body.querySelectorAll('audio')
-  for (var i = 0; i < media.length; i++) {
-    if(media[i] !== event.target) {
-      media[i].pause();
+    const media = document.body.querySelectorAll("audio");
+    for (var i = 0; i < media.length; i++) {
+      if (media[i] !== event.target) {
+        media[i].pause();
+      }
     }
-  };
-}
+  }
 </script>
 
-<div class={isPlaying ? cardStyle + ' ring-1 playing' : cardStyle} on:click={(event) => playSound(event)}>
+<div
+  class={isPlaying ? cardStyle + " ring-1 playing" : cardStyle}
+  on:click={(event) => playSound(event)}
+>
   <div class="card-body">
     <h2 class="card-title h-8 mb-2">{title}</h2>
     <figure class="mt-1">
@@ -41,37 +45,58 @@ function handlePlay(event, isSound) {
         bind:volume={computedVolume}
         on:play={(event) => handlePlay(event)}
         on:pause={(event) => handlePause(event)}
-        on:volumechange={() => dispatch('volumechanged', computedVolume * 100)}
+        on:volumechange={() => dispatch("volumechanged", computedVolume * 100)}
       >
-        <source src={`${url}.mp3`} type="audio/mpeg">
-        <source src={`${url}.ogg`} type="audio/ogg">
+        <source src={`${url}.mp3`} type="audio/mpeg" />
+        <source src={`${url}.ogg`} type="audio/ogg" />
       </audio>
-    <a class="tooltip tooltip-primary ml-2 justify-end z-10" href={`${url}.mp3`} download data-tip={`Télécharger ${title}`} onclick="event.stopPropagation();">
-      <button class="btn btn-square btn-outline">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-        </svg>
-      </button>
-    </a>
+      <a
+        class="tooltip tooltip-primary ml-2 justify-end z-10"
+        href={`${url}.mp3`}
+        download
+        data-tip={`Télécharger ${title}`}
+        onclick="event.stopPropagation();"
+      >
+        <button class="btn btn-square btn-outline">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+            />
+          </svg>
+        </button>
+      </a>
     </figure>
-    <slot/>
+    <slot />
   </div>
 </div>
 
 <style>
-@keyframes pulse-ring {
-  0%,
-  50%,
-  100% {box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);}
-  25%,
-  75% {box-shadow: var(--tw-shadow, 0 0 #0000), var(--tw-ring-shadow),;}
-}
+  @keyframes pulse-ring {
+    0%,
+    50%,
+    100% {
+      box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+        var(--tw-shadow, 0 0 #0000);
+    }
+    25%,
+    75% {
+      box-shadow: var(--tw-shadow, 0 0 #0000), var(--tw-ring-shadow);
+    }
+  }
 
-.playing {
-  animation-name: pulse-ring;
-  animation-duration: 2.30s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in;
-}
+  .playing {
+    animation-name: pulse-ring;
+    animation-duration: 2.3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+  }
 </style>
-

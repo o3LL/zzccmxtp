@@ -3,10 +3,10 @@
 
   let done = false;
   let dayTime, hoursTime, minutesTime, secondsTime;
-  let dayTimeCss = '--value:99';
-  let hoursTimeCss = '--value:99';
-  let minutesTimeCss = '--value:99';
-  let secondsTimeCss = '--value:99';
+  let dayTimeCss = "--value:99";
+  let hoursTimeCss = "--value:99";
+  let minutesTimeCss = "--value:99";
+  let secondsTimeCss = "--value:99";
   const seconds = 1000;
   const minutes = seconds * 60;
   const hours = minutes * 60;
@@ -35,7 +35,7 @@
 
     secondsTime = Math.floor((difference % minutes) / seconds);
     secondsTimeCss = `--value:${secondsTime}`;
-}, seconds);
+  }, seconds);
 </script>
 
 <div>
@@ -45,28 +45,28 @@
     <div class="grid grid-flow-col gap-5 text-center auto-cols-max">
       <div class="flex flex-col">
         <span class="countdown font-mono text-5xl">
-          <span style={dayTimeCss}></span>
+          <span style={dayTimeCss} />
         </span>
         jours
       </div>
 
       <div class="flex flex-col">
         <span class="countdown font-mono text-5xl">
-          <span style={hoursTimeCss}></span>
+          <span style={hoursTimeCss} />
         </span>
         heurs
       </div>
 
       <div class="flex flex-col">
         <span class="countdown font-mono text-5xl">
-          <span style={minutesTimeCss}></span>
+          <span style={minutesTimeCss} />
         </span>
         min
       </div>
 
       <div class="flex flex-col">
-         <span class="countdown font-mono text-5xl">
-          <span style={secondsTimeCss}></span>
+        <span class="countdown font-mono text-5xl">
+          <span style={secondsTimeCss} />
         </span>
         sec
       </div>
@@ -76,7 +76,11 @@
     <div class="alert shadow-lg">
       <div>
         <h3 class="text-lg">
-          la tape est sorti mon chégé va voir sur <a href="https://zzcc.fr/mxtp" class="link" target="_blank">le vrai site</a> !
+          la tape est sorti mon chégé va voir sur <a
+            href="https://zzcc.fr/mxtp"
+            class="link"
+            target="_blank">le vrai site</a
+          > !
         </h3>
       </div>
     </div>
