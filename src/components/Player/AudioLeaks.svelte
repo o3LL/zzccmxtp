@@ -23,7 +23,6 @@
     { title: "29. Délirium Café", url: "/audio/leaks/Delirium_Cafe" },
     { title: "40. 3 Zèbres (Ft. Ysos)", url: "/audio/leaks/3_Zebres" },
     { title: "?. J'ai rien à leur dire", url: "/audio/leaks/J'ai_rien_a_leur_dire" },
-    { title: "?. Jc pas", url: "/audio/leaks/Jc_pas" },
     { title: "?. Panpan", url: "/audio/leaks/Panpan-construct" },
     { title: "?. Un peu de cash", url: "/audio/leaks/Un_peu_de_cash" },
     { title: "?. Jc pas", url: "/audio/leaks/Jc_pas" },
