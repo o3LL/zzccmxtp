@@ -21,13 +21,15 @@
     { title: "26. Light You Up (Ft. Pélerine & PV Nova)", url: "/audio/leaks/Light_You_Up-concat" },
     { title: "27. Adieu les filles by Squeezie", url: "/audio/leaks/Adieu_les_filles" },
     { title: "29. Délirium Café", url: "/audio/leaks/Delirium_Cafe" },
+    { title: "37. JRPG (Ft. Baek, Epektase & LE GRAND JD)", url: "/audio/leaks/Un_peu_de_cash" },
+    { title: "38. Le milli (je crois)", url: "/audio/leaks/Panpan-construct" },
     { title: "40. 3 Zèbres (Ft. Ysos)", url: "/audio/leaks/3_Zebres" },
-    { title: "?. J'ai rien à leur dire", url: "/audio/leaks/J'ai_rien_a_leur_dire" },
-    { title: "?. Panpan", url: "/audio/leaks/Panpan-construct" },
-    { title: "?. Un peu de cash", url: "/audio/leaks/Un_peu_de_cash" },
-    { title: "?. Jc pas", url: "/audio/leaks/Jc_pas" },
+    { title: "?. J'ai rien à leur dire", url: "/audio/leaks/g_rien_a_leur_dire" },
     { title: "?. Interlude Deums", url: "/audio/leaks/Interlude_Deums" },
     { title: "?. Connais po", url: "/audio/leaks/Connais_tjr_pas" },
+    { title: "?. Plugg", url: "/audio/leaks/Plugg" },
+    { title: "?. So_moi_meme (ft. AlphaOneVirugleDeux)", url: "/audio/leaks/So_moi_meme" },
+    { title: "?. Vibe", url: "/audio/leaks/Vibe" },
   ];
 
   let volume = 75;
