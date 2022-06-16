@@ -14,14 +14,14 @@ import Preco from '../components/Preco.astro';
       <h5 class="text-xs font-light">Le site pas officiel du tout</h5>
     </div>
 
-    <br>
-    <Preco></Preco>
-
-    <div class="hero z-20">
+     <div class="hero z-20">
       <div class="text-center hero-content">
-        <CountDown client:only="svelte" end="2022-06-17T00:00:00.000+02:00" />
+        <CountDown client:only="svelte" />
       </div>
     </div>
+
+    <br>
+    <Preco></Preco>
 
     <div class="hero z-20">
       <div class="text-center hero-content">
