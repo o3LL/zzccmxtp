@@ -49,7 +49,6 @@
         on:volumechange={() => dispatch("volumechanged", computedVolume * 100)}
       >
         <source src={`${url}.mp3`} type="audio/mpeg" />
-        <source src={`${url}.ogg`} type="audio/ogg" />
       </audio>
       {#if sulfi}
         <a
