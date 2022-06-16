@@ -6,6 +6,7 @@
   export let url;
   export let volume;
   export let sulfi;
+  export let audioId;
   $: computedVolume = volume / 100;
 
   const cardStyle =
@@ -40,6 +41,7 @@
     <h2 class="card-title h-8 mb-2">{title}</h2>
     <figure class="mt-1">
       <audio
+        id={audioId}
         onclick="event.stopPropagation();"
         controls
         preload="none"
@@ -47,6 +49,7 @@
         on:play={(event) => handlePlay(event)}
         on:pause={(event) => handlePause(event)}
         on:volumechange={() => dispatch("volumechanged", computedVolume * 100)}
+        on:ended={() => dispatch('ended')}
       >
         <source src={`${url}.mp3`} type="audio/mpeg" />
       </audio>

@@ -71,6 +71,16 @@
   ];
 
   let volume = 69; // Bien vue ça
+  let shoudPlayNext = true;
+
+  function handleEnded(id) {
+    if (!shoudPlayNext) return
+
+    const nextId = id + 1;
+    const mediaElement = document.getElementById('audioId-' + nextId);
+    if (!mediaElement) return handleEnded(-1) // Retourne au debut si y'a pu d'son
+    mediaElement.play();
+  }
 </script>
 
 <div class="mx-auto w-full lg:w-1/2 text-center hidden lg:block">
@@ -88,15 +98,28 @@
     bind:value={volume}
     class="range range-accent mt-2"
   />
+
+  <div class="form-control">
+    <label class="label cursor-pointer">
+      <span class="label-text">Tou écouter a la suit (en gros c autoplaay genre c spotify ici un peu lol)</span> 
+      <input
+        type="checkbox"
+        bind:checked={shoudPlayNext}
+        class="checkbox checkbox-primary"
+      />
+    </label>
+  </div>
 </div>
 
 <div class="flex items-center flex-wrap gap-4 justify-center mt-4 mb-8">
-  {#each sounds as sound}
+  {#each sounds as sound, id}
     <Media
+      audioId={'audioId-' + id}
       glitch={true}
       {...sound}
       {volume}
       on:volumechanged={(event) => (volume = event.detail)}
+      on:ended={() => handleEnded(id)}
     />
   {/each}
 </div>
