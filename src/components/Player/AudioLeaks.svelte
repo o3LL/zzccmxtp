@@ -1,5 +1,5 @@
 <script>
-  import Media from "./Media.svelte";
+  import Media, { defaultVolume } from "./Media.svelte";
 
   const sounds = [
     {
@@ -70,7 +70,7 @@
     { title: "?. Vibe", url: "/audio/leaks/Vibe" },
   ];
 
-  let volume = 69; // Bien vue ça
+  let volume = defaultVolume;
   let shoudPlayNext = true;
 
   function handleEnded(id) {
