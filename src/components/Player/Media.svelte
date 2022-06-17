@@ -1,3 +1,7 @@
+<script context="module">
+  export const defaultVolume = 69; // Bien vue ça
+</script>
+
 <script>
   import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
