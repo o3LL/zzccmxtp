@@ -1,5 +1,5 @@
 <script>
-  import Media from "./Media.svelte";
+  import Media, { defaultVolume } from "./Media.svelte";
 
   const sounds = [
     { title: "3 Freres Topline", url: "/audio/3freres_topline" },
@@ -36,7 +36,7 @@
     { title: "Smokin drogz", url: "/audio/smokin-drogz-_1_" },
   ];
 
-  let volume = 75;
+  let volume = defaultVolume;
 </script>
 
 <div class="mx-auto w-full lg:w-1/2 text-center hidden lg:block">
