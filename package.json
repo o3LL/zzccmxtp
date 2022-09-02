@@ -22,6 +22,8 @@
   "dependencies": {
     "daisyui": "^2.24.0",
     "lite-youtube-embed": "^0.2.0",
-    "svelte-particles": "^2.2.4"
+    "svelte-particles": "^2.2.4",
+    "tsparticles": "^2.2.4",
+    "tsparticles-engine": "^2.2.4"
   }
 }

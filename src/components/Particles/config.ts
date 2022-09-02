@@ -1,4 +1,4 @@
-import type { RecursivePartial, IOptions } from "tsparticles";
+import { RecursivePartial, IOptions } from "tsparticles-engine";
 
 const config: RecursivePartial<IOptions> = {
   fullScreen: {
