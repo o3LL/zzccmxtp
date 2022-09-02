@@ -1,5 +1,6 @@
 ---
 import Macrongue from '../components/Macrongue.svelte';
+import LaPub from '../components/Money/LaPub.svelte'
 import 'lite-youtube-embed/src/lite-yt-embed.css';
 ---
 
@@ -33,6 +34,9 @@ import 'lite-youtube-embed/src/lite-yt-embed.css';
       display: none;
     }
   </style>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4671839077216611"
+     crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -42,7 +46,7 @@ import 'lite-youtube-embed/src/lite-yt-embed.css';
       import 'lite-youtube-embed/src/lite-yt-embed.js';
     </script>
 
-  <nav class="navbar bg-transparent items-center absolute z-40 max-h-12">
+  <nav class="navbar bg-transparent items-center z-40 max-h-12 overflow-hidden">
     <div class="w-100 mx-auto">
       <ul class="menu menu-horizontal p-0 text-xl text-accent font-bold">
         <li><a href="/">Accueil</a></li>
@@ -74,23 +78,29 @@ import 'lite-youtube-embed/src/lite-yt-embed.css';
   </nav>
 
   <script>
-      const html = document.getElementsByTagName('html')[0];
-      const themeToggle = document.getElementById('themeToggle');
-      let currentTheme = localStorage.getItem('theme');
+    const html = document.getElementsByTagName('html')[0];
+    const themeToggle = document.getElementById('themeToggle');
+    let currentTheme = localStorage.getItem('theme');
 
-      if (!currentTheme) {
-        currentTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
+    if (!currentTheme) {
+      currentTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
 
-      html.setAttribute('data-theme', currentTheme)
-      themeToggle.checked = currentTheme === 'dark';
+    html.setAttribute('data-theme', currentTheme)
+    themeToggle.checked = currentTheme === 'dark';
 
-      themeToggle.addEventListener('change', (event) => {
-        let dataTheme = event.target.checked ? 'dark' : 'light';
-        localStorage.setItem("theme", dataTheme);
-        html.setAttribute('data-theme', dataTheme);
-      });
-    </script>
+    themeToggle.addEventListener('change', (event) => {
+      let dataTheme = event.target.checked ? 'dark' : 'light';
+      localStorage.setItem("theme", dataTheme);
+      html.setAttribute('data-theme', dataTheme);
+    });
+  </script>
+
+  <!-- 
+  <div class="mt-4">
+    <LaPub client:only="svelte" />
+  </div>
+  -->
 
   <!-- Content injection-->
   <slot />
