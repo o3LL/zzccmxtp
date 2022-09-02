@@ -1,10 +1,12 @@
 ---
 import BaseLayout from '../layouts/Base.astro';
 import LaLegendreOST from '../components/LaLegendreOST.astro';
+import Particles from '../components/Particles/Particles.svelte';
 ---
 
 <BaseLayout>
   <div class="h-full w-full relative pt-16">
+    <Particles client:only="svelte" />
     <LaLegendreOST />
   </div>
 </BaseLayout>
