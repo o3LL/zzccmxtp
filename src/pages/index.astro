@@ -2,102 +2,36 @@
 import BaseLayout from '../layouts/Base.astro';
 import LaLegendreOST from '../components/LaLegendreOST.astro';
 import Particles from '../components/Particles/Particles.svelte';
-import CountDown from '../components/CountDown.svelte';
+import Stream from '../components/Stream.astro';
 import Preco from '../components/Preco.astro';
+import YouTube from '../components/Player/YouTube.svelte';
 ---
 
 <BaseLayout>
   <div class="h-full w-full relative">
     <Particles client:only="svelte" />
-    <div class="text-center pt-16">
+    <div class="text-center">
       <h1 class="text-accent font-bold text-5xl lg:text-7xl">ZZCCMXTP</h1>
       <h5 class="text-xs font-light">Le site pas officiel du tout</h5>
     </div>
 
-     <div class="hero z-20">
-      <div class="text-center hero-content">
-        <CountDown client:only="svelte" />
-      </div>
+    <div class="mt-6 flex gap-x-1 items-stretch">
+      <Stream />
+      <Preco />
     </div>
 
     <br>
-    <Preco></Preco>
+    <br>
 
-    <div class="hero z-20">
-      <div class="text-center hero-content">
-        <div class="my-10 z-20 max-w-5xl flex flex-wrap lg:-mx-8 items-end">
-          <div class="my-8 px-2 lg:w-1/2 justify-content-bottom">
-            <h2 class="text-accent font-bold text-4xl lg:text-4xl">
-              mate le clip de alkpote il é tre chaud notamment <a class="link"
-                href="https://bfan.link/violette-citronnelle" target="_blank">ou stream le fort</a>
-            </h2>
-            <br>
-            <br>
-            <div class="aspect-w-16 aspect-h-9 ring-1 ring-accent ring-offset-2 ring-offset-accent-focus">
-              <lite-youtube videoid="IJmaAy4bRGU">
-                <!-- Bug fix, astro add undefined if nothing is defined inside an HTML Component -->
-              </lite-youtube>
-            </div>
-          </div>
-          <br>
-
-          <div class="my-8 px-2 lg:w-1/2 min-h-fit">
-            <h2 class="text-accent font-bold text-4xl lg:text-4xl">
-              c eu les daft punk finalement <a class="link" href="https://bfan.link/nous-sommes-les-daft-punk"
-                target="_blank">ici aussi ils sont daft punk</a>
-            </h2>
-            <br>
-            <br>
-            <div class="aspect-w-16 aspect-h-9 ring-1 ring-accent ring-offset-2 ring-offset-accent-focus">
-              <lite-youtube videoid="LcsnE9h0u4U">
-                <!-- Bug fix, astro add undefined if nothing is defined inside an HTML Component -->
-              </lite-youtube>
-            </div>
-          </div>
-          <br>
-
-          <div class="my-8 px-2 lg:w-1/2 justify-content-bottom">
-            <h2 class="text-accent font-bold text-4xl lg:text-4xl">
-              Oh hhé ya le clip "Adieu Les filles" avec Squeezie qui est sortie tu peux mater le clip (monté par ronare)
-              <a class="link" href="https://squeezie.s-ib.link/AdieuLesFilles" target="_blank">ou lécouter partout</a>
-            </h2>
-            <br>
-            <br>
-            <div class="aspect-w-16 aspect-h-9 ring-1 ring-accent ring-offset-2 ring-offset-accent-focus">
-              <lite-youtube videoid="BTOVgWjUoDo">
-                <!-- Bug fix, astro add undefined if nothing is defined inside an HTML Component -->
-              </lite-youtube>
-            </div>
-          </div>
-          <br>
-
-          <div class="my-8 px-2 lg:w-1/2 min-h-fit">
-            <h2 class="text-accent font-bold text-4xl lg:text-4xl">
-              Découvrez aussi ici même le clip "Nous Y sommes" de la zzccmxtp ou écoute sur <a class="link"
-                href="https://fanlink.to/NousYsommes" target="_blank">ton réseau musical préféré</a>
-            </h2>
-            <br>
-            <div class="aspect-w-16 aspect-h-9 ring-1 ring-accent ring-offset-2 ring-offset-accent-focus">
-              <lite-youtube videoid="o5u0iyr8DT4">
-                <!-- Bug fix, astro add undefined if nothing is defined inside an HTML Component -->
-              </lite-youtube>
-            </div>
-          </div>
-          <br>
-
-          <div class="my-8 px-2 lg:w-1/2 min-h-fit">
-            <h2 class="text-accent font-bold text-4xl lg:text-4xl">
-              Sinon tu peux aussi mater la tracklist legendaire de la zzccmxtp
-            </h2>
-            <br>
-            <div class="aspect-w-16 aspect-h-9 ring-1 ring-accent ring-offset-2 ring-offset-accent-focus">
-              <lite-youtube videoid="1sMQVpSQBks">
-                <!-- Bug fix, astro add undefined if nothing is defined inside an HTML Component -->
-              </lite-youtube>
-            </div>
-          </div>
-        </div>
-      </div>
+    <h2 class=" font-bold text-center text-accent">Tou les clips de la zzcc sont ici</h2>
+    <div class="container justify-center z-20 flex flex-wrap items-end overflow-hidden">
+      <YouTube id="i6KWYycWuao" description="yaa pa jul mais c tt comme si yaavé" />
+      <YouTube id="n3sBPimeLIo" description="tu peu montrer a ta maman ça stv" />
+      <YouTube id="IJmaAy4bRGU" description="mate le clip de alkpote il é tre chaud notamment" />
+      <YouTube id="LcsnE9h0u4U" description="c eu les daft punk finalement" />
+      <YouTube id="BTOVgWjUoDo" description="ca c le clip de Adieu Les filles avec Squeezie qui est desus tu peux mater le clip (monté par ronare (le clip))" />
+      <YouTube id="o5u0iyr8DT4" description="nous y somme c le 1er clip sorti franchemnt c cool (s/o tom s/o le v la péniche)" />
+      <YouTube id="1sMQVpSQBks" description="artéfact tré rare de la tracklist legendaire de la zzccmxtp" />
     </div>
   </div>
   <div>
