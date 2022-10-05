@@ -103,4 +103,7 @@
 </div>
 
 <style>
+  #macrongue {
+    cursor: pointer;
+  }
 </style>
