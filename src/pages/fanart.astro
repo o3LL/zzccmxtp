@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/Base.astro';
+import Particles from '../components/Particles/Particles.svelte';
+import FanartForm from '../components/FanartForm.svelte';
+import FanartGallery from '../components/FanartGallery.astro';
+---
+
+<BaseLayout>
+  <div class="h-full w-full relative pt-16">
+    <Particles client:only="svelte" />
+
+    <div class="container mx-auto">
+      <FanartForm />
+
+      <!-- <FanartGallery /> -->
+    </div>
+  </div>
+</BaseLayout>
