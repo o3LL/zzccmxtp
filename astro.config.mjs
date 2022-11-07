@@ -3,6 +3,7 @@ import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
 
 import sitemap from "@astrojs/sitemap";
+import image from '@astrojs/image';
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,5 +12,5 @@ export default defineConfig({
   server: {
     host: '0.0.0.0'
   },
-  integrations: [svelte(), tailwind(), sitemap()]
+  integrations: [svelte(), tailwind(), sitemap(), image()]
 });
