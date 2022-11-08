@@ -21,7 +21,7 @@ const { isTop } = Astro.props;
   </div>
   <a href="https://www.twitch.tv/yuna_art" target="_blank">
     {isTop ?
-      <Image src={pubMobile} height={160} width={600} alt="Une superbe pub pour le twitch de Yunaart"></Image> :
+      <img src={'/MOBILE.jpg'} height={160} width={600} alt="Une superbe pub pour le twitch de Yunaart" /> :
       <Image src={pubDesktop} height={600} width={200} alt="Une superbe pub pour le twitch de Yunaart"></Image>
     }
   </a>
