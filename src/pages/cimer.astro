@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/Base.astro';
+import LaLegendreOST from '../components/LaLegendreOST.astro';
+import Particles from '../components/Particles/Particles.svelte';
+import Stream from '../components/Stream.astro';
+import Preco from '../components/Preco.astro';
+import YouTube from '../components/Player/YouTube.svelte';
+---
+
+<BaseLayout>
+  <div class="h-full w-full relative">
+    <Particles client:only="svelte" />
+    <div class="container mx-auto justify-center w-full md:w-1/2">
+      <div class="card mx-4 bg-primary text-primary-content text-center">
+        <div class="card-body">
+          <h1 class="card-title font-bold text-5xl lg:text-7xl">MERCI POUR TON FANART</h1>
+          <h5 class="text-xl font-light">C'est vrement super sympa davoir envoyé ton fanart, sach qu'il sera bien traité ici et que je ne lutiliserai pas a des fin commercial psq ca sfait pas!!!</h5>
+          <p class="">Ton bo dessin apparaitera biento faut que je le regard pour savoir si c pas une dickpic on sait jamais et apré je le metterais dans la page dédié</p>
+          <a href="/fanart" class="btn bg-base-100 text-primary">Retour o fanart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
