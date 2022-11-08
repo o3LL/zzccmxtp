@@ -22,7 +22,8 @@ module.exports = {
 					primary: "#00e849",
 					"primary-focus": "#00e849",
 					"primary-content": "rgb(48, 48, 48)",
-					"base-100": "#272a30"
+					"base-100": "#272a30",
+					"accent-content": "rgb(48, 48, 48)"
 				},
 				light: {
 					...require("daisyui/src/colors/themes")["[data-theme=autumn]"],
