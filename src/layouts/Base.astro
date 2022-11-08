@@ -1,5 +1,6 @@
 ---
 import Macrongue from '../components/Macrongue.svelte';
+import LaPub from '../components/LaPub.astro';
 import 'lite-youtube-embed/src/lite-yt-embed.css';
 ---
 
@@ -91,11 +92,9 @@ import 'lite-youtube-embed/src/lite-yt-embed.css';
     });
   </script>
 
-  <!-- 
-  <div class="mt-4">
-    <LaPub client:only="svelte" />
+  <div class="mt-4 mb-4 flex flex-col gap-2">
+    <LaPub isTop={true}/>
   </div>
-  -->
 
   <!-- Content injection-->
   <slot />

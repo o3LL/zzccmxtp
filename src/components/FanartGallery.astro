@@ -1,0 +1,24 @@
+---
+import { Picture } from '@astrojs/image/components';
+---
+
+<div id="gallery">
+	<Picture src={import('../img/fanarts/Fg6ZzB7XwAAhw-3.jpeg')} alt="" widths={[200, 400, 800]} sizes="(max-height: 250px) 250px, 250px" />
+	<Picture src={import('../img/fanarts/Fg6ZR3oWQAAQupo.jpeg')} alt="" widths={[200, 400, 800]} sizes="(max-height: 250px) 250px, 250px" />
+</div>
+
+
+<style>
+  #gallery {
+		display: flex;
+  	flex-wrap: wrap;
+		gap: 8px;
+	}
+
+	img {
+		max-height: 100%;
+		min-width: 100%;
+		object-fit: cover;
+		vertical-align: bottom;
+	}
+</style>
