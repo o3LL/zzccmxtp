@@ -1,24 +1,44 @@
 ---
-import { Picture } from '@astrojs/image/components';
+const conf = [
+	{
+		src: "FhB9QWdXkAAbxbw.jpeg",
+		author: "https://twitter.com/tompimento",
+		name: ""
+	},
+	{
+		src: "FhDw59-WAAIxhe9.jpeg",
+		author: "https://twitter.com/bloospicy",
+		name: ""
+	},
+];
+
+const shuffleArray = array => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+	return array
+}
+
+const fanarts = shuffleArray(conf.map((fanart) => {
+	fanart.name = fanart.author.match('([^\/]+$)')[0]
+
+	return fanart;
+}))
 ---
 
-<div id="gallery">
-	<Picture src={import('../img/fanarts/Fg6ZzB7XwAAhw-3.jpeg')} alt="" widths={[200, 400, 800]} sizes="(max-height: 250px) 250px, 250px" />
-	<Picture src={import('../img/fanarts/Fg6ZR3oWQAAQupo.jpeg')} alt="" widths={[200, 400, 800]} sizes="(max-height: 250px) 250px, 250px" />
+<div id="gallery" class="flex mx-auto flex-row z-20 overflow-hidden flex-wrap gap-2">
+	{fanarts.map((fanart) =>
+		<div class="flex-1 basis-[21%] card card-compact shadow-lg bg-base-200 min-w-0 w-full shrink min-h-0 h-full">
+			<a href={fanart.author} target="_blank">
+				<figure><img src={`/media/fanart/${fanart.src}`} alt={`un bo fanart de la part de ${fanart.name}`} /></figure>
+				<div class="card-body" class="h-4 max-h-4">
+					<p class="text-right">Réalisé par <span class="text-accent underline">{fanart.name}</span></p>
+				</div>
+			</a>
+		</div>
+	)}
 </div>
-
-
-<style>
-  #gallery {
-		display: flex;
-  	flex-wrap: wrap;
-		gap: 8px;
-	}
-
-	img {
-		max-height: 100%;
-		min-width: 100%;
-		object-fit: cover;
-		vertical-align: bottom;
-	}
-</style>

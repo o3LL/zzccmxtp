@@ -40,37 +40,41 @@ import 'lite-youtube-embed/src/lite-yt-embed.css';
   <Macrongue client:only />
 
   <script>
-      import 'lite-youtube-embed/src/lite-yt-embed.js';
-    </script>
+    import 'lite-youtube-embed/src/lite-yt-embed.js';
+  </script>
 
-  <nav class="navbar bg-transparent items-center z-40 max-h-12 overflow-hidden">
-    <div class="w-100 mx-auto">
-      <ul class="menu menu-horizontal p-0 text-xl text-accent font-bold">
-        <li><a href="/">Accueil</a></li>
-        <li>
-          <a href="/ost" class="flex flex-col justify-center gap-0">
+  <nav class="navbar bg-transparent items-center z-40 max-h-12 overflow-hidden p-0">
+    <div class="mx-auto">
+      <ul class="menu menu-horizontal p-0 text-accent font-bold w-screen md:w-auto flex text-xs md:text-xl">
+        <li class="w-1/6 flex-1 justify-evenly md:justify-center"><a href="/">Accueil</a></li>
+        <li class="w-1/6 flex-1 justify-evenly md:justify-center">
+          <a href="/ost">
             <p class="text-xs">ZZCC La Legendre™</p>
           </a>
         </li>
-        <li>
+        <li class="w-1/6 flex-1 justify-evenly md:justify-center">
           <a href="/leak" class="glitch" style="--stacks: 3;">
             <span style="--index: 0;">Leaks</span>
             <span style="--index: 1;">Leaks</span>
             <span style="--index: 2;">Leaks</span>
           </a>
         </li>
-        <li><a href="/about">FAQ</a></li>
+        <li class="w-1/6 flex-1 justify-evenly md:justify-center"><a href="/fanart">Fanarts</a></li>
+        <li class="w-1/6 flex-1 justify-evenly md:justify-center"><a href="/about">FAQ</a></li>
+        <li class="relative md:absolute right-0 md:w-1/6 md:flex-1 justify-evenly md:justify-center">
+          <div class=" mt-0 md:mt-5 ">
+            <div class="form-control">
+              <label class="label flex-col cursor-pointer">
+                <input type="checkbox" class="toggle" id="themeToggle">
+                <span class="text-tiny invisible hidden md:visible md:block">mode bresom</span>
+              </label>
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
 
-    <div class="relative md:absolute mt-5 right-0">
-      <div class="form-control">
-        <label class="label flex-col cursor-pointer">
-          <input type="checkbox" class="toggle" id="themeToggle">
-          <span class="label-text mr-2 text-base-content text-tiny md:visible invisible">mode bresom</span>
-        </label>
-      </div>
-    </div>
+  
   </nav>
 
   <script>

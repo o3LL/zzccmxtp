@@ -2,17 +2,21 @@
 import BaseLayout from '../layouts/Base.astro';
 import Particles from '../components/Particles/Particles.svelte';
 import FanartForm from '../components/FanartForm.svelte';
-// import FanartGallery from '../components/FanartGallery.astro';
+import FanartGallery from '../components/FanartGallery.astro';
 ---
 
 <BaseLayout>
   <div class="h-full w-full relative pt-16">
     <Particles client:only="svelte" />
 
-    <div class="container mx-auto">
-      <FanartForm />
+    <div class="container mx-auto justify-center z-20">
+      <h2 class="text-2xl lg:text-5xl text-center text-accent">HALL OF FANARTS</h2>
+      <p class="text-sm text-center">Les bo fanarts fait par les fans psq c'est des fanart t'as capté</p>
+      <div class="mb-5 mt-5">
+        <FanartForm />
+      </div>
 
-      <!-- <FanartGallery /> -->
+      <FanartGallery />
     </div>
   </div>
 </BaseLayout>
