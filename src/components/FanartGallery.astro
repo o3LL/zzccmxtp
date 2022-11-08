@@ -59,7 +59,7 @@ const fanarts = shuffleArray(conf.map((fanart) => {
 	{fanarts.map((fanart) =>
 		<div class="flex-1 basis-[21%] card card-compact shadow-lg bg-base-200 min-w-0 w-full shrink min-h-0 h-full">
 			<a href={fanart.author} target="_blank">
-				<figure><img src={`/fanart/${fanart.src}`} alt={`un bo fanart de la part de ${fanart.name}`} /></figure>
+				<figure><img src={`/media/fanart/${fanart.src}`} alt={`un bo fanart de la part de ${fanart.name}`} /></figure>
 				<div class="card-body" class="h-4 max-h-4">
 					<p class="text-right">Réalisé par <span class="text-accent underline">{fanart.name}</span></p>
 				</div>
