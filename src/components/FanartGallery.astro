@@ -1,36 +1,43 @@
 ---
 const conf = [
 	{
+		id: "1",
 		src: "FhB9QWdXkAAbxbw.jpeg",
 		author: "https://twitter.com/tompimento",
 		name: ""
 	},
 	{
+		id: "2",
 		src: "FhDw59-WAAIxhe9.jpeg",
 		author: "https://twitter.com/bloospicy",
 		name: ""
 	},
 	{
+		id: "3",
 		src: "funart1.jpg",
 		author: "https://instagram.com/ninon_le_dragon",
 		name: ""
 	},
 	{
+		id: "4",
 		src: "image_6487327.jpg",
 		author: "https://instagram.com/ninon_le_dragon",
 		name: ""
 	},
 	{
+		id: "5",
 		src: "ZZCCMXTP1-comp.jpg",
 		author: "https://www.instagram.com/maxime_allirot_design",
 		name: ""
 	},
 	{
+		id: "6",
 		src: "fanfan-comp.jpg",
 		author: "http://twitter.com/biendken",
 		name: ""
 	},
 	{
+		id: "7",
 		src: "FanArt-ZZCCMXTP-comp.jpg",
 		author: "https://twitter.com/Maxtar33",
 		name: ""
@@ -57,13 +64,29 @@ const fanarts = shuffleArray(conf.map((fanart) => {
 
 <div id="gallery" class="flex mx-auto flex-row z-20 overflow-hidden flex-wrap gap-2">
 	{fanarts.map((fanart) =>
-		<div class="flex-1 basis-[21%] card card-compact shadow-lg bg-base-200 min-w-0 w-full shrink min-h-0 h-full">
-			<a href={fanart.author} target="_blank">
+	<>
+		<div class="flex-1 basis-full md:basis-[21%] mx-2 md:mx-0 card shadow-lg bg-base-200 min-w-0 w-full shrink min-h-0 h-full">
+			<label for={`art-${fanart.id}`}>
 				<figure><img src={`/media/fanart/${fanart.src}`} alt={`un bo fanart de la part de ${fanart.name}`} /></figure>
-				<div class="card-body" class="h-4 max-h-4">
-					<p class="text-right">Réalisé par <span class="text-accent underline">{fanart.name}</span></p>
+				<div class="card-body p-1 block mr-1">
+					<p class="text-right">Réalisé par <a href={fanart.author} target="_blank" class="text-accent underline">{fanart.name}</a></p>
 				</div>
 			</a>
 		</div>
+
+		<input type="checkbox" id={`art-${fanart.id}`} class="modal-toggle" />
+		<label for={`art-${fanart.id}`} class="modal cursor-pointer">
+			<label class="modal-box relative w-11/12 max-w-5xl"  for="">
+				<a href={fanart.author} target="_blank" class="text-accent underline">
+					<figure ><img class="md:h-[70vh] md:max-h-[90%] mx-auto" src={`/media/fanart/${fanart.src}`} alt={`un bo fanart de la part de ${fanart.name}`} /></figure>
+				</a>
+				<p class="text-center mt-2">Réalisé par <a href={fanart.author} target="_blank" class="text-accent underline">{fanart.name}</a></p>
+				<div class="modal-action">
+					<label for={`art-${fanart.id}`} class="btn btn-accent invisible sm:visible" onMouseOver="this.innerText='grave bo jadore!!!'">pa ouf...</label>
+					<label for={`art-${fanart.id}`} class="btn btn-accent">oé stylé 👍</label>
+				</div>
+			</label>
+		</label>
+	</>
 	)}
 </div>
