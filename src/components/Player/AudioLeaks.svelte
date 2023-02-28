@@ -14,7 +14,7 @@
       title: "4. Maman (Ft. Dawn Beats & PLEEG)",
       url: "/audio/leaks/Maman-concat",
     },
-    { title: "6. CDI Freestyle", url: "/audio/leaks/CDI_Freestyle" },
+    { title: "6. CDI Freestyle", url: "/audio/leaks/So_moi_meme" },
     { title: "7. Rudeboy", url: "/audio/leaks/Rudeboy" },
     {
       title: "8. La Vériter (Ft. Antoine Daniel & Baghera Jones)",
@@ -29,8 +29,8 @@
       url: "/audio/leaks/Interlude_Mafieux",
     },
     {
-      title: "17. Zen (Ft. Dawn Beats & Junkid)",
-      url: "/audio/leaks/Zen-concat",
+      title: "17. Light You Up (Ft. Pélerine & PV Nova)",
+      url: "/audio/leaks/Light_You_Up-concat",
     },
     { title: "18. FTG (Ft. Luther)", url: "/audio/leaks/FTG" },
     { title: "20. Drake (Ft. Mehdi Maïzi)", url: "/audio/leaks/Drake" },
@@ -49,25 +49,24 @@
     },
     { title: "25. Glow Up (Ft. Madj)", url: "/audio/leaks/Glow_Up" },
     {
-      title: "26. Light You Up (Ft. Pélerine & PV Nova)",
-      url: "/audio/leaks/Light_You_Up-concat",
+      title: "26. Zen (Ft. Dawn Beats & Junkid)",
+      url: "/audio/leaks/Zen-concat",
     },
+    { title: "26. Zen (juste un ptit bout)", url: "/audio/leaks/g_rien_a_leur_dire" },
+    { title: "26. Zen (encor un ptit bout)", url: "/audio/leaks/Vibe" },
     {
       title: "27. Adieu les filles by Squeezie",
       url: "/audio/leaks/Adieu_les_filles",
     },
     { title: "29. Délirium Café", url: "/audio/leaks/Delirium_Cafe" },
-    { title: "37. JRPG (Ft. Baek, Epektase & LE GRAND JD)", url: "/audio/leaks/Un_peu_de_cash" },
+    { title: "37. JRPG (Ft. Baek, Epektase & LE GRAND JD)", url: "/audio/leaks/JRPG" },
     { title: "38. Le milli (je crois)", url: "/audio/leaks/Panpan-construct" },
     { title: "40. 3 Zèbres (Ft. Ysos)", url: "/audio/leaks/3_Zebres" },
     { title: "bizarre. Eva Elfie (bah c sulfitman)", url: "/audio/leaks/sulfi-eva_elfi", sulfi: true },
-    { title: "?. Jc pas", url: "/audio/leaks/Jc_pas" },
-    { title: "?. J'ai rien à leur dire", url: "/audio/leaks/g_rien_a_leur_dire" },
     { title: "?. Interlude Deums", url: "/audio/leaks/Interlude_Deums" },
     { title: "?. Connais po", url: "/audio/leaks/Connais_tjr_pas" },
-    { title: "?. Plugg", url: "/audio/leaks/Plugg" },
-    { title: "?. So_moi_meme (ft. AlphaOneVirugleDeux)", url: "/audio/leaks/So_moi_meme" },
-    { title: "?. Vibe", url: "/audio/leaks/Vibe" },
+    { title: "QUE DES BARZ - DISS TRACTION (prod pas fini)", url: "/audio/leaks/Plugg" },
+    { title: "QUE DES BARZ - DISS TRACTION (encore)", url: "/audio/leaks/CDI_Freestyle" },
   ];
 
   let volume = defaultVolume;
